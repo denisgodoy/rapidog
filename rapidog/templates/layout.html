@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script defer src="{% static 'scripts.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>rapidog - o app do seu pet shop</title>
+</head>
+<body>
+    <nav class="navFixa">
+        <div class="navLogo">
+             <a>logotipo</a>
+        </div>
+         <div class="navAncoras">
+            <a href="">Sobre</a>
+            <a href="">Encontre um Pet Shop</a>
+            <a href="">Compre Produtos</a>
+            <a href="">Contato</a>
+            <a href="">Login</a>
+        </div>
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+    <footer></footer>
+</body>
+</html>

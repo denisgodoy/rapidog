@@ -1,0 +1,152 @@
+body {
+    background-color: #01B5B2;
+    margin: 0 auto;
+}
+
+button {
+    background-color: #01B5B2;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-family: Proxima Nova Blk;
+    font-size: 12pt;
+    height: 50px;
+    text-transform: uppercase;
+    width: 200px;
+}
+
+button:hover {
+    background-color: #ffff;
+    color: #0E1122;
+    cursor: pointer;
+}
+
+.divConteudo {
+    align-items: center;    
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+}
+
+.divImg {
+    height: 100%;
+    padding-top: 45px;
+    padding-right: 40px;
+    width: 50%;
+}
+
+.divImg img {
+    height: 100%;
+    width: 100%;
+}
+
+@font-face {
+    font-family: Proxima Nova Alt Bold;
+    src: url(fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Alt\ Bold.otf);
+}
+
+@font-face {
+    font-family: Proxima Nova Alt ExtraBold;
+    src: url(fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Alt\ ExtraBold.otf);
+}
+
+@font-face {
+    font-family: Proxima Nova Alt Light;
+    src: url(fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Alt\ Light.otf);
+}
+
+@font-face {
+    font-family: Proxima NovaBlack;
+    src: url(fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Regular.otf);
+}
+
+@font-face {
+    font-family: Proxima Nova Blk;
+    src: url(fonts/ProximaNova-Black.otf);
+}
+
+@font-face {
+    font-family: Proxima Nova Xbold;
+    src: url(fonts/ProximaNova-Xbold.otf);
+}
+
+h1 {
+    color: white;
+    font-family: Proxima Nova Blk;
+    padding-top: 20px;
+}
+
+h1 span {
+    padding-left: 80px;
+}
+
+header {
+    background-image: url(imagens/op2_header.png);
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    height: 665px;
+    width: 100%;
+    /* parallax */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.navAncoras {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    padding-right: 65px;
+    width: 60%;
+}
+
+.navAncoras a:hover {
+    color: #0E1122;
+}
+
+.navFixa {
+    align-items: center;
+    display: flex;
+    height: 90px;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* transição */
+    transition: background-color 600ms ease-in-out;
+    -moz-transition: background-color 600ms ease-in-out;
+    -webkit-transition: background-color 600ms ease-in-out;
+}
+
+.navLogo {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    padding-left: 65px;
+    width: 40%;
+}
+
+.navLogo, .navAncoras a {
+    color: white;
+    font-family: Proxima Nova Blk;
+    font-size: 11pt;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+p {
+    color: white;
+    font-family: Proxima Nova Xbold;
+}
+
+.texto {
+    height: auto;
+    padding-top: 150px;
+    width:70% ;
+}
+
+
+
+
