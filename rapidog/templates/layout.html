@@ -29,8 +29,19 @@
     {% endblock %}
     <footer>
         <div class="footerNews">
-            <div></div>
-            <div></div>
+            <div class="newsletter">
+                <p>Assine nossa Newsletter</p>
+                <form>
+                    <input class="formEmail" type="email" name="" id="">
+                    <button class="formBotao" type="submit">Enviar</button>
+                </form>
+            </div>
+            <div class="redessociais">
+                    <div><img src="{% static 'imagens/icones/twitter.png' %}" alt="Logotipo Twitter."></div>
+                    <div><img src="{% static 'imagens/icones/facebook.png' %}" alt="Logotipo Facebook."></div>
+                    <div><img src="{% static 'imagens/icones/linkedin.png' %}" alt="Logotipo LinkedIn."></div>
+                    <div><img src="{% static 'imagens/icones/youtube.png' %}" alt="Logotipo YouTube."></div>  
+            </div>
         </div>
         <div class="footerConteudo">
             <div class="footerRaiz">
