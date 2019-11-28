@@ -22,6 +22,14 @@ button:hover {
     cursor: pointer;
 }
 
+.displayProdutos {
+    display: flex;
+    flex-flow: row wrap;
+    height: auto;
+    margin-left: 40px;
+    width: 100%;
+}
+
 .divConteudo {
     align-items: center;    
     display: flex;
@@ -261,6 +269,50 @@ p {
     font-family: Proxima Nova Xbold;
 }
 
+#produtos {
+    align-content: center;
+    background-image: url(imagens/op2_header.png);
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    width: 100%;
+     /* parallax */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+#produto {
+    align-items: center;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    margin: 10px;
+    margin-bottom: 20px;
+    width: 230px;
+}
+
+#produto:hover {
+    box-shadow: 5px 5px 15px  rgb(219, 219, 219);
+}
+
+#produto img {
+    height: 150px;
+    margin-top: 10px;
+    width: 150px;
+}
+
+#produto p {
+    color: #0E1122;
+    font-family: Proxima Nova Xbold;
+    font-size: 12pt;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
 .redessociais {
     align-items: center;
     display: flex;
@@ -289,6 +341,22 @@ p {
 .redessociais img {
     filter: invert(100%);
     width: 60%;
+}
+
+.tabelaProdutos {
+    background-color: white;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-top: 100px;
+    width: 98%;
+}
+
+.tabelaProdutos h1 {
+    color: #0E1122;
+    padding-left: 50px;
 }
 
 .texto {

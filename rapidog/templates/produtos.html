@@ -2,14 +2,14 @@
 {% load static %}
 
 {% block content %}
-<header>
-    <div>
-        {% for produto in produtos %}
+<main id="produtos">
+    <div class="tabelaProdutos">
+        <h1>Produtos</h1>
+        <div class=displayProdutos>
+            <div id="produto">
+                <img src="{% static 'imagens/racao.png' %}" alt="">
+                <p>Ração Pedigree Adulto Carne e Vegetais 3kg</p>
+            </div>
     </div>
-
-    <div>
-        <p>{{produto.nome}}</p>
-        <p>{{ptoduto.preco}}</p>
-    </div>
-</header>
+</main>
 {% endblock %} 
