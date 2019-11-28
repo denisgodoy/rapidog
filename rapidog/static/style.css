@@ -42,26 +42,6 @@ button:hover {
 }
 
 @font-face {
-    font-family: Proxima Nova Alt Bold;
-    src: url(fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Alt\ Bold.otf);
-}
-
-@font-face {
-    font-family: Proxima Nova Alt ExtraBold;
-    src: url(fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Alt\ ExtraBold.otf);
-}
-
-@font-face {
-    font-family: Proxima Nova Alt Light;
-    src: url(fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Alt\ Light.otf);
-}
-
-@font-face {
-    font-family: Proxima NovaBlack;
-    src: url(fonts/Mark\ Simonson\ -\ Proxima\ Nova\ Regular.otf);
-}
-
-@font-face {
     font-family: Proxima Nova Blk;
     src: url(fonts/ProximaNova-Black.otf);
 }
@@ -69,6 +49,74 @@ button:hover {
 @font-face {
     font-family: Proxima Nova Xbold;
     src: url(fonts/ProximaNova-Xbold.otf);
+}
+
+footer {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    justify-content: center;
+    width: 100%;
+}
+
+.footerConteudo {
+    align-items: center;
+    border-color: rgba(1, 181, 178, 0.103);
+    border-top-style: ridge;
+    display: flex;
+    height: 85%;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.footerCriadores {
+    align-items: center;
+    display: flex;
+    height: 15%;
+    justify-content: center;
+    width: 100%;
+}
+
+.footerCriadores p {
+    color: #01B5B2;
+    font-family: Proxima Nova Xbold;
+    font-size: 10pt;
+}
+
+.footerNews {
+    align-items: center;
+    background-color: #0E1122;
+    display: flex;
+    height: 100px;
+    justify-content: center;
+    width: 100%;
+}
+
+.footerRaiz, .footerContato, .footerRedes {
+    height: 90%;
+    width: 25%;
+}
+
+.footerRaiz a {
+    color: #0E1122;
+    font-family: Proxima Nova Xbold;
+    font-size: 12pt;
+    text-decoration: none;
+}
+
+.footerRaiz p {
+    color: #01B5B2;
+    font-family: Proxima Nova Xbold;
+    font-size: 10pt;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.footerRaiz ul {
+    list-style: none;
+    padding: 0;
 }
 
 h1 {
