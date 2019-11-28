@@ -4,3 +4,9 @@ from django.shortcuts import render
 
 def index(request):
     return render(request, 'index.html')
+
+def produtos(request):
+    secao_produtos = Produto.objects.filter(disponivel=True)
+    context = {
+        'produtos': secao_produtos
+    }
