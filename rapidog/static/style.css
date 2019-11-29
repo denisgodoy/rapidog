@@ -405,3 +405,23 @@ p {
     padding-top: 150px;
     width:70% ;
 }
+
+.divBanners {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.divBanners div {
+    height: 215px;
+    width: 427px ;
+    cursor: pointer;
+}
+
+.divBanners img {
+    width: 100%;
+    height: 100%;
+}
