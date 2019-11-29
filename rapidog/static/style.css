@@ -329,13 +329,27 @@ p {
     width: 150px;
 }
 
-#produto p {
+.produtoDescricao {
     color: #0E1122;
     font-family: Proxima Nova Xbold;
     font-size: 12pt;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.produtoMarca {
+    color: gray;
+    font-family: Proxima Nova Xbold;
+    font-size: 10pt;
+    margin: -10px 125px 0 10px;
+}
+
+.produtoPreco {
+    color: #0E1122;
+    font-family: Proxima Nova Xbold;
+    font-size: 24pt;
     text-align: center;
+    margin-top: 15px;
 }
 
 .redessociais {
