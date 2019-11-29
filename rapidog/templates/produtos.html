@@ -4,6 +4,10 @@
 {% block content %}
 <main id="produtos">
     <div class="tabelaProdutos">
+        <div class="navBusca">
+                <input type="search" name="Buscar" id="buscaProdutos" placeholder="Busque por código, nome ou marca">
+                <img src="{% static 'imagens/cart.png' %}" alt="">
+        </div>
         <h1>Produtos</h1>
         <div class=displayProdutos>
             <div id="produto">
