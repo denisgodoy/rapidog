@@ -4,10 +4,6 @@
 {% block content %}
 <main id="produtos">
     <div class="tabelaProdutos">
-        <div class="navBusca">
-                <input type="search" name="Buscar" id="buscaProdutos" placeholder="Busque por código, nome ou marca">
-                <img src="{% static 'imagens/cart.png' %}" alt="">
-        </div>
         <div class=divBanners>
             <div>
                 <img src="{% static 'imagens/banner1.png' %}" alt="">
@@ -49,7 +45,7 @@
         </div>
         <div class="divCategoria">
             <h1>Brinquedos & Bem Estar</h1>
-            <a href="higiene/" class="ancoraCategoria">Ver mais produtos</a>
+            <a href="brinquedos/" class="ancoraCategoria">Ver mais produtos</a>
         </div>
         <div class=displayProdutos>
             {% for produto in brinquedos %}
