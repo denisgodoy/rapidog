@@ -19,7 +19,10 @@
                 <img src="{% static 'imagens/banner3.png' %}" alt="">
             </div>
         </div>
-        <h1>Alimentação</h1>
+        <div class="divCategoria">
+            <h1>Alimentação</h1>
+            <a href="alimentacao/" class="ancoraCategoria">Ver mais produtos</a>
+        </div>
         <div class=displayProdutos>
             {% for produto in alimentacao %}
             <div id="produto">
@@ -30,8 +33,11 @@
             </div>
             {% endfor %}
         </div>
-        <h1>Higiene</h1>
-        <div class=displayProdutos>
+        <div class="divCategoria">
+            <h1>Higiene & Saúde</h1>
+            <a href="higiene/" class="ancoraCategoria">Ver mais produtos</a>
+        </div>        
+            <div class=displayProdutos>
             {% for produto in higiene %}
             <div id="produto">
                 <img src="../{{produto.imagem.url}}" alt="">
@@ -41,7 +47,10 @@
             </div>
             {% endfor %}
         </div>
-        <h1>Brinquedos</h1>
+        <div class="divCategoria">
+            <h1>Brinquedos & Bem Estar</h1>
+            <a href="higiene/" class="ancoraCategoria">Ver mais produtos</a>
+        </div>
         <div class=displayProdutos>
             {% for produto in brinquedos %}
             <div id="produto">
