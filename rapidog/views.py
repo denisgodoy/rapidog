@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from django.shortcuts import render_to_response
+from django.http import HttpResponse
 from rapidog.models import *
 
 # Create your views here.
@@ -26,4 +28,18 @@ def alimentacao(request):
         'alimentacao': alimentacao
     }
     
+    return render(request, 'alimentacao.html', context)
+
+def buscarAlimentacao(request):
+    query = request.GET.get('busca')
+
+    if query and busca != '':
+        resultado = Produto.objects.filter(nome_produto__icontains=query, disponivel=True, categoria='alimentacao')
+    else:
+       alimentacao()
+
+    context = {
+        'busca': resultado,
+    }
+
     return render(request, 'alimentacao.html', context)
