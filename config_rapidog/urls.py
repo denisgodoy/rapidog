@@ -24,4 +24,6 @@ urlpatterns = [
     path('', views.index),
     path('produtos/', views.produtos),
     path('produtos/alimentacao/', views.alimentacao),
+    path('produtos/higiene/', views.higiene),
+    path('produtos/brinquedos/', views.brinquedos),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
