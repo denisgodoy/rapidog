@@ -19,20 +19,39 @@
                 <img src="{% static 'imagens/banner3.png' %}" alt="">
             </div>
         </div>
-        <h1>Produtos</h1>
+        <h1>Alimentação</h1>
         <div class=displayProdutos>
+            {% for produto in alimentacao %}
             <div id="produto">
-                <img src="{% static 'imagens/racao.png' %}" alt="">
-                <p class="produtoDescricao">Ração Adulto Carne e Vegetais 3kg</p>
-                <p class="produtoMarca">Pedigree</p>
-                <p class="produtoPreco">R$ 39,45</p>
+                <img src="../{{produto.imagem.url}}" alt="">
+                <p class="produtoDescricao">{{produto.nome_produto}}</p>
+                <p class="produtoMarca">{{produto.marca}}</p>
+                <p class="produtoPreco">R$ {{produto.preco}}</p>
             </div>
+            {% endfor %}
+        </div>
+        <h1>Higiene</h1>
+        <div class=displayProdutos>
+            {% for produto in higiene %}
             <div id="produto">
-                <img src="{% static 'imagens/racao2.jpg' %}" alt="">
-                <p class="produtoDescricao">Ração Premium Adulto Vegetais 15kg</p>
-                <p class="produtoMarca">Magnus</p>
-                <p class="produtoPreco">R$ 79,90</p>
+                <img src="../{{produto.imagem.url}}" alt="">
+                <p class="produtoDescricao">{{produto.nome_produto}}</p>
+                <p class="produtoMarca">{{produto.marca}}</p>
+                <p class="produtoPreco">R$ {{produto.preco}}</p>
             </div>
+            {% endfor %}
+        </div>
+        <h1>Brinquedos</h1>
+        <div class=displayProdutos>
+            {% for produto in brinquedos %}
+            <div id="produto">
+                <img src="../{{produto.imagem.url}}" alt="">
+                <p class="produtoDescricao">{{produto.nome_produto}}</p>
+                <p class="produtoMarca">{{produto.marca}}</p>
+                <p class="produtoPreco">R$ {{produto.preco}}</p>
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </main>
 {% endblock %} 
