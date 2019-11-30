@@ -22,3 +22,32 @@ class Produto(models.Model):
 
     def __str__(self):
         return self.nome_produto
+
+class Loja(models.Model):
+    estados = [
+        ('SP', 'SP'),
+    ]
+
+    cidades = [
+        ('SAO', 'São Paulo')
+    ]
+
+    bairros = [
+        ('Bela Vista', 'Bela Vista'),
+        ('Consolação', 'Consolação'),
+        ('Jd Paulista', 'Jardim Paulista'),
+        ('Perdizes', 'Perdizes'),
+        ('Vila Mariana', 'Vila Mariana'),
+    ]
+
+    nome_loja = models.CharField(max_length=100)
+    descricao_loja = models.CharField(max_length=400)
+    endereco = models.CharField(max_length=200)
+    bairro = models.CharField(max_length=30, choices=bairros)
+    cidade = models.CharField(max_length=30, choices=cidades)
+    estado = models.CharField(max_length=2, choices=estados)
+    verificado = models.BooleanField(default=True)
+    logotipo = models.ImageField(upload_to='', null=True, blank=True)
+
+    def __str__(self):
+        return self.nome_loja
