@@ -43,3 +43,49 @@ def buscarAlimentacao(request):
     }
 
     return render(request, 'alimentacao.html', context)
+
+def higiene(request):
+    higiene = Produto.objects.filter(disponivel=True, categoria='higiene').order_by('-id')
+
+    context = {
+        'higiene': higiene
+    }
+
+    return render(request, 'higiene.html', context)
+
+def buscarHigiene(request):
+    query = request.GET.get('busca')
+
+    if query and busca != '':
+        resultado = Produto.objects.filter(nome_produto__icontains=query, disponivel=True, categoria='higiene')
+    else:
+        higiene()
+
+    context = {
+        'busca': resultado
+    }
+
+    return render(request, 'higiene.html', context)
+
+def brinquedos(request):
+    brinquedos = Produto.objects.filter(disponivel=True, categoria='brinquedos').order_by('-id')
+
+    context = {
+        'brinquedos': brinquedos
+    }
+
+    return render(request, 'brinquedos.html', context)
+
+def buscarBrinquedos(request):
+    query = request.GET.get('busca')
+
+    if query and busca != '':
+        resultado = Produto.objects.filter(nome_produto__icontains=query, disponivel=True, categoria='brinquedos')
+    else: 
+        brinquedos()
+    
+    context = {
+        'brinquedos': resultado
+    }
+
+    return render(request, 'brinquedos.html', context)
