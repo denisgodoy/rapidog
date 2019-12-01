@@ -89,3 +89,17 @@ def buscarBrinquedos(request):
     }
 
     return render(request, 'brinquedos.html', context)
+
+def lojas(request):
+    petshops = Loja.objects.all().order_by('-id')[:5]
+    jdPaulista = Loja.objects.filter(bairro='Jd Paulista').order_by('-id')[:5]
+    consolacao = Loja.objects.filter(bairro='Consolação').order_by('-id')[:5]
+
+
+    context = {
+        'lojas': petshops,
+        'jdPaulista': jdPaulista,
+        'consolacao': consolacao,
+    }
+
+    return render(request, 'petshops.html', context)
