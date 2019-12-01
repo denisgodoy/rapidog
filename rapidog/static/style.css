@@ -21,6 +21,7 @@ body {
     border-radius: 0;
     height: 40px;
     width: 40px;
+    border: none;
 }
 
 #buscaProdutos {
@@ -522,7 +523,8 @@ p {
     font-size: 20pt;
     padding-left: 30px;
     padding-right: 30px;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .lojaBairro {
@@ -541,7 +543,55 @@ p {
 }
 
 #loja img {
-    width: 90%;
-    height: 70%;
-    margin-top: 5px;
+    width: 40%;
+    height: 40%;
+    margin-top: 10px;
+}
+
+.servico {
+    font-size: 10pt;
+    text-transform: uppercase;
+    color: white;
+    margin: 0;
+}
+
+#preco {
+    color: white;
+    font-size: 11pt;
+    margin: 0;
+}
+
+.servicos {
+    width: 92%;
+    height: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.servicos div {
+    background-color: #01B5B2;
+    border-radius: 10px;
+    width: 85px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.servicos div:hover {
+    background-color: #0E1122;
+}
+
+.pAnuncio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: grey;
+    text-transform: uppercase;
+    font-size: 10pt;
+    margin: 0;
+    margin-left: 50px;
+    width: 80px;
+    height: 20px;
 }

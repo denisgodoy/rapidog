@@ -4,19 +4,22 @@
 {% block content %}
 <main id="lojas">
     <div class="tabelaLojas">
+            <form class="formBusca" method="GET" onkeypress="busca" action="">
+                <input type="search" name="Busca" id="buscaProdutos" placeholder="Busque por bairro ou nome"></input>
+                <button class="botaoBusca" type="submit"></button>
+            </form>
+        {% if anuncios %}
+        <p class="pAnuncio">Anúncios</p>
         <div class=divBanners>
+            {% for anuncio in anuncios %}
             <div>
-                <img src="{% static 'imagens/banner1.png' %}" alt="">
+                <img src="../{{anuncio.anuncio.url}}" alt="">
             </div>
-            <div>
-                <img src="{% static 'imagens/banner2.png' %}" alt="">
-            </div>
-            <div>
-                <img src="{% static 'imagens/banner3.png' %}" alt="">
-            </div>
+            {% endfor %}
         </div>
+        {% endif %}
         <div class="divBairro">
-            <h1>Jardim Paulista</h1>
+            <h1>Pet Shops mais bem avaliados</h1>
             <a href="" class="ancoraBairro">Ver mais pet shops</a>
         </div>
         <div class=displayLojas>
@@ -24,11 +27,31 @@
             <div id="loja">
                 <img src="../{{loja.logotipo.url}}" alt=""></img>
                 <p class="lojaNome">{{loja.nome_loja}}</p>
+                <div class="servicos">
+                    {% if loja.banho %}
+                    <div>
+                        <p class="servico">Banho</p>
+                        <p id="preco">R$ {{loja.preco_banho}}</p>
+                    </div>
+                    {% endif %}
+                    {% if loja.tosa %}
+                    <div>
+                        <p class="servico">Tosa</p>
+                        <p id="preco">R$ {{loja.preco_tosa}}</p>
+                    </div>
+                    {% endif %}
+                    {% if loja.combo %}
+                    <div>
+                        <p class="servico">Combo</p>
+                        <p id="preco">R$ {{loja.preco_combo}}</p>
+                    </div>
+                    {% endif %}
+                </div> 
             </div>
             {% endfor %}
         </div>
         <div class="divBairro">
-            <h1>Consolação</h1>
+            <h1>Pet Shops mais procurados</h1>
             <a href="" class="ancoraBairro">Ver mais pet shops</a>
         </div>
         <div class=displayLojas>
@@ -36,6 +59,26 @@
             <div id="loja">
                 <img src="../{{loja.logotipo.url}}" alt=""></img>
                 <p class="lojaNome">{{loja.nome_loja}}</p>
+                <div class="servicos">
+                    {% if loja.banho %}
+                    <div>
+                        <p class="servico">Banho</p>
+                        <p id="preco">R$ {{loja.preco_banho}}</p>
+                    </div>
+                    {% endif %}
+                    {% if loja.tosa %}
+                    <div>
+                        <p class="servico">Tosa</p>
+                        <p id="preco">R$ {{loja.preco_tosa}}</p>
+                    </div>
+                    {% endif %}
+                    {% if loja.combo %}
+                    <div>
+                        <p class="servico">Combo</p>
+                        <p id="preco">R$ {{loja.preco_combo}}</p>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
             {% endfor %}
         </div>
