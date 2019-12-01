@@ -444,3 +444,104 @@ p {
     padding-top: 150px;
     width:70%;
 }
+
+#lojas {
+    align-content: center;
+    background-image: url(imagens/op2_header.png);
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    width: 100%;
+     /* parallax */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+#loja {
+    align-items: center;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 230px;
+    margin: 0 0 25px 28px;
+    width: 300px;
+    cursor: pointer;
+}
+
+#loja:hover {
+    box-shadow: 5px 5px 15px  rgb(219, 219, 219);
+}
+
+.tabelaLojas {
+    background-color: white;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-top: 100px;
+    width: 98%;
+}
+
+.tabelaLojas h1 {
+    color: #0E1122;
+    margin-top: 5px;
+    padding-left: 50px;
+}
+
+.displayLojas {
+    display: flex;
+    flex-flow: row wrap;
+    height: auto;
+    width: 100%;
+}
+
+.divBairro {
+    align-items: center;
+    display: flex;
+    flex-flow: row;
+}
+
+.ancoraBairro {
+    background-color: rgb(161, 161, 161);
+    border-radius: 5px;
+    color: white;
+    font-family: Proxima Nova Xbold;
+    font-size: 8pt;
+    margin-left: 20px;
+    padding: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.lojaNome {
+    color: #0E1122;
+    font-family: Proxima Nova Xbold;
+    font-size: 20pt;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-bottom: 4px;
+}
+
+.lojaBairro {
+    color: gray;
+    font-family: Proxima Nova Xbold;
+    font-size: 10pt;
+    margin-top: 0;
+}
+
+.loja {
+    color: #0E1122;
+    font-family: Proxima Nova Xbold;
+    font-size: 24pt;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#loja img {
+    width: 90%;
+    height: 70%;
+    margin-top: 5px;
+}

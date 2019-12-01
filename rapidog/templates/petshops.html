@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<main id="lojas">
+    <div class="tabelaLojas">
+        <div class=divBanners>
+            <div>
+                <img src="{% static 'imagens/banner1.png' %}" alt="">
+            </div>
+            <div>
+                <img src="{% static 'imagens/banner2.png' %}" alt="">
+            </div>
+            <div>
+                <img src="{% static 'imagens/banner3.png' %}" alt="">
+            </div>
+        </div>
+        <div class="divBairro">
+            <h1>Jardim Paulista</h1>
+            <a href="" class="ancoraBairro">Ver mais pet shops</a>
+        </div>
+        <div class=displayLojas>
+            {% for loja in jdPaulista %}
+            <div id="loja">
+                <img src="../{{loja.logotipo.url}}" alt=""></img>
+                <p class="lojaNome">{{loja.nome_loja}}</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="divBairro">
+            <h1>Consolação</h1>
+            <a href="" class="ancoraBairro">Ver mais pet shops</a>
+        </div>
+        <div class=displayLojas>
+            {% for loja in consolacao %}
+            <div id="loja">
+                <img src="../{{loja.logotipo.url}}" alt=""></img>
+                <p class="lojaNome">{{loja.nome_loja}}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</main>
+{% endblock %} 
