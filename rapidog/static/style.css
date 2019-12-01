@@ -15,14 +15,22 @@ body {
     text-transform: uppercase;
 }
 
+.botaoBusca {
+    background: no-repeat;
+    background-image: url('imagens/icones/busca.png');
+    border-radius: 0;
+    height: 40px;
+    width: 40px;
+}
+
 #buscaProdutos {
     border: none;
     color: #0E1122;
     font-family: Proxima Nova Blk;
     font-size: 20pt;
     height: 60px;
-    margin: 30px;
-    margin-bottom: 0;
+    margin-left: 30px;
+    margin-right: 5px;
     padding-left: 20px;
     width: 40%;
 }
@@ -219,10 +227,17 @@ footer {
     width: 90px;
 }
 
-
 .formBotao:hover {
     background-color: #01B5B2;
     cursor: pointer;
+}
+
+.formBusca {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    height: 100px;
+    width: 100%;
 }
 
 .formEmail {
@@ -302,13 +317,6 @@ header {
     font-size: 11pt;
     text-decoration: none;
     text-transform: uppercase;
-}
-
-.formBusca {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    margin-right: 60px;
 }
 
 .newsletter {
@@ -434,5 +442,5 @@ p {
 .texto {
     height: auto;
     padding-top: 150px;
-    width:70% ;
+    width:70%;
 }
