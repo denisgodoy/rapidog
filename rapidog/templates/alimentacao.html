@@ -4,14 +4,14 @@
 {% block content %}
 <main id="produtos">
     <div class="tabelaProdutos">
-        <form class="formBusca" method="GET" onkeypress="busca" action="">
-            <input type="search" name="Busca" id="buscaProdutos" placeholder="Busque por código, nome ou marca"></input>
+        <form class="formBusca" method="GET" action=".">
+            <input id="buscaProdutos" name='q' type="text" placeholder="Busque por nome ou marca" onkeypress="busca"></input>
             <button class="botaoBusca" type="submit"></button>
         </form>
-        {% if busca %}
+        {% if query %}
         <h1>Resultado da busca em Alimentação</h1>
         <div class=displayProdutos>
-            {% for produto in alimentacao %}
+            {% for produto in query %}
             <div id="produto">
                 <img src="../../../{{produto.imagem.url}}" alt="">
                 <p class="produtoDescricao">{{produto.nome_produto}}</p>
