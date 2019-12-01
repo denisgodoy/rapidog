@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from django.shortcuts import render_to_response
-from django.http import HttpResponse
+from django.db.models import Q
 from rapidog.models import *
 
 # Create your views here.
@@ -30,19 +29,19 @@ def alimentacao(request):
     
     return render(request, 'alimentacao.html', context)
 
-def buscarAlimentacao(request):
-    query = request.GET.get('busca')
+# def buscarAlimentacao(request):
+#     query = request.GET.get(**kwargs)
 
-    if query and busca != '':
-        resultado = Produto.objects.filter(nome_produto__icontains=query, disponivel=True, categoria='alimentacao')
-    else:
-       alimentacao()
+#     if query and busca != '':
+#         resultado = Produto.objects.filter(nome_produto__icontains=query, disponivel=True, categoria='alimentacao')
+#     else:
+#        alimentacao()
 
-    context = {
-        'busca': resultado,
-    }
+#     context = {
+#         'busca': resultado,
+#     }
 
-    return render(request, 'alimentacao.html', context)
+#     return render(request, 'alimentacao.html', context)
 
 def higiene(request):
     higiene = Produto.objects.filter(disponivel=True, categoria='higiene').order_by('-id')
@@ -53,19 +52,19 @@ def higiene(request):
 
     return render(request, 'higiene.html', context)
 
-def buscarHigiene(request):
-    query = request.GET.get('busca')
+# def buscarHigiene(request):
+#     query = request.GET.get('busca')
 
-    if query and busca != '':
-        resultado = Produto.objects.filter(nome_produto__icontains=query, disponivel=True, categoria='higiene')
-    else:
-        higiene()
+#     if query and busca != '':
+#         resultado = Produto.objects.filter(nome_produto__icontains=query, disponivel=True, categoria='higiene')
+#     else:
+#         higiene()
 
-    context = {
-        'busca': resultado
-    }
+#     context = {
+#         'busca': resultado
+#     }
 
-    return render(request, 'higiene.html', context)
+#     return render(request, 'higiene.html', context)
 
 def brinquedos(request):
     brinquedos = Produto.objects.filter(disponivel=True, categoria='brinquedos').order_by('-id')
@@ -76,30 +75,38 @@ def brinquedos(request):
 
     return render(request, 'brinquedos.html', context)
 
-def buscarBrinquedos(request):
-    query = request.GET.get('busca')
+# def buscarBrinquedos(request):
+#     query = request.GET.get('busca')
 
-    if query and busca != '':
-        resultado = Produto.objects.filter(nome_produto__icontains=query, disponivel=True, categoria='brinquedos')
-    else: 
-        brinquedos()
+#     if query and busca != '':
+#         resultado = Produto.objects.filter(nome_produto__icontains=query, disponivel=True, categoria='brinquedos')
+#     else: 
+#         brinquedos()
     
-    context = {
-        'brinquedos': resultado
-    }
+#     context = {
+#         'brinquedos': resultado
+#     }
 
-    return render(request, 'brinquedos.html', context)
+#     return render(request, 'brinquedos.html', context)
 
 def lojas(request):
-    petshops = Loja.objects.all().order_by('-id')[:5]
-    jdPaulista = Loja.objects.filter(bairro='Jd Paulista').order_by('-id')[:5]
-    consolacao = Loja.objects.filter(bairro='Consolação').order_by('-id')[:5]
-
+    anunciar = Loja.objects.filter(anunciar=True)[:3]
+    jdPaulista = Loja.objects.filter(bairro='Jd Paulista').order_by('-id')[:4]
+    consolacao = Loja.objects.filter(bairro='Consolação').order_by('-id')[:4]
 
     context = {
-        'lojas': petshops,
+        'anuncios': anunciar,
         'jdPaulista': jdPaulista,
         'consolacao': consolacao,
     }
 
     return render(request, 'petshops.html', context)
+
+def search(request):
+    query = request.GET.get('q','')
+
+    if query:
+            queryset = (Q(nome_produto__icontains=query)) | (Q(marca__icontains=query))
+            results = Produto.objects.filter(queryset, categoria='alimentacao').distinct()
+    
+    return render(request, 'alimentacao.html', {'query':query})
