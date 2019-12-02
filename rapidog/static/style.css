@@ -17,10 +17,11 @@ body {
 
 .botaoBusca {
     background: no-repeat;
+    background-size: cover;    
     background-image: url('imagens/icones/busca.png');
     border-radius: 0;
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
     border: none;
 }
 
@@ -33,7 +34,7 @@ body {
     margin-left: 30px;
     margin-right: 5px;
     padding-left: 20px;
-    width: 40%;
+    width: 35%;
 }
 
 button {
@@ -551,14 +552,15 @@ p {
 .servico {
     font-size: 10pt;
     text-transform: uppercase;
-    color: white;
+    color: rgb(23, 25, 39);
     margin: 0;
 }
 
 #preco {
-    color: white;
-    font-size: 11pt;
+    color: rgb(23, 25, 39);
+    font-size: 12pt;
     margin: 0;
+    font-family: Proxima Nova Blk;
 }
 
 .servicos {
@@ -569,7 +571,10 @@ p {
 }
 
 .servicos div {
-    background-color: #01B5B2;
+    /* background-color: #F2F2F2; */
+    border: rgb(224, 223, 223);
+    border-width: 1.5px;
+    border-style: solid;
     border-radius: 10px;
     width: 85px;
     height: 60px;
@@ -580,18 +585,25 @@ p {
 }
 
 .servicos div:hover {
-    background-color: #0E1122;
+    border: #0E1122;
+    border-width: 1.5px;
+    border-style: solid;
 }
 
 .pAnuncio {
+    font-family: Proxima Nova Blk;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: grey;
+    color: rgb(52, 129, 52);
     text-transform: uppercase;
-    font-size: 10pt;
+    font-size: 9pt;
     margin: 0;
     margin-left: 50px;
     width: 80px;
     height: 20px;
+    border: rgb(52, 129, 52);
+    border-style: solid;
+    border-radius: 7px;
+    border-width: 1.5px;
 }
