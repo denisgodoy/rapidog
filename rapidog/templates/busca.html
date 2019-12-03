@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block content %}
+<main id="produtos">
+    <div class="tabelaProdutos">
+        <form class="formBusca" method="GET" action=".">
+            <input type="search" name="q" id="buscaProdutos" placeholder="Busque por marca ou nome"></input>
+            <button class="botaoBusca" type="submit"></button>
+        </form>
+    {% if query %}
+        {% if resultados %}
+        <div class="divBusca">
+            <h1 class="textoResultado">Resultados da busca "{{query}}"</h1>
+            <button class="refresh">Limpar busca</button>
+        </div>
+        <div class=displayProdutos>
+            {% for produto in resultados %}
+            <div id="produto">
+                <img src="../../../{{produto.imagem.url}}" alt="">
+                <p class="produtoDescricao">{{produto.nome_produto}}</p>
+                <p class="produtoMarca">{{produto.marca}}</p>
+                <p class="produtoPreco">R$ {{produto.preco}}</p>
+            </div>
+            {% endfor %}
+        {% else %}
+        <div class="divBusca">
+            <h1 class="textoResultado">Sua busca por "{{query}}" não retornou resultados</h1>
+            <button class="refresh">Limpar busca</button>
+        </div>
+        {% endif %}
+    {% else %}
+        <h1>Faça sua busca</h1>
+        <h2>Buscas mais comuns</h2>
+        </div>
+    {% endif %}
+    </div>
+</main>
+{% endblock %} 
