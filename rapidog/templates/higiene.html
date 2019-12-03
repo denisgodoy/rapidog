@@ -4,13 +4,18 @@
 {% block content %}
 <main id="produtos">
     <div class="tabelaProdutos">
-        <form class="formBusca" method="GET" onkeypress="busca" action="">
-            <input type="search" name="Busca" id="buscaProdutos" placeholder="Busque por código, nome ou marca">
+        <form class="formBusca" method="GET" action=".">
+            <input type="search" name="q" id="buscaProdutos" placeholder="Busque por marca ou nome"></input>
+            <button class="botaoBusca" type="submit"></button>
         </form>
-        {% if busca %}
-        <h1>Resultado da busca em Higiene & Saúde</h1>
+    {% if query %}
+        {% if results %}
+        <div class="divBusca">
+            <h1 class="textoResultado">Resultados da busca "{{query}}" em Higiene & Saúde</h1>
+            <button class="refresh">Limpar busca</button>
+        </div>
         <div class=displayProdutos>
-            {% for produto in higiene %}
+            {% for produto in results %}
             <div id="produto">
                 <img src="../../../{{produto.imagem.url}}" alt="">
                 <p class="produtoDescricao">{{produto.nome_produto}}</p>
@@ -18,8 +23,13 @@
                 <p class="produtoPreco">R$ {{produto.preco}}</p>
             </div>
             {% endfor %}
-        </div>
         {% else %}
+        <div class="divBusca">
+            <h1 class="textoResultado">Sua busca por "{{query}}" não retornou resultados</h1>
+            <button class="refresh">Limpar busca</button>
+        </div>
+        {% endif %}
+    {% else %}
         <h1>Higiene & Saúde</h1>
         <div class=displayProdutos>
             {% for produto in higiene %}    
@@ -31,7 +41,7 @@
             </div>
             {% endfor %}
         </div>
-        {% endif %}
+    {% endif %}
     </div>
 </main>
 {% endblock %} 
