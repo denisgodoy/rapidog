@@ -37,7 +37,7 @@ body {
     width: 35%;
 }
 
-button {
+.conteudoBotao {
     background-color: #01B5B2;
     border: none;
     border-radius: 20px;
@@ -50,7 +50,7 @@ button {
     width: 200px;
 }
 
-button:hover {
+.conteudoBotao:hover {
     background-color: #ffff;
     color: #0E1122;
     cursor: pointer;
@@ -606,4 +606,33 @@ p {
     border-style: solid;
     border-radius: 7px;
     border-width: 1.5px;
+}
+
+.refresh {
+    background-color: #A1A1A1;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-family: Proxima Nova Blk;
+    font-size: 11pt;
+    height: 30px;
+    text-transform: uppercase;
+    width: 135px;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.refresh:hover {
+    background-color: #0E1122;
+}
+
+.divBusca {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.textoResultado {
+    font-family: Proxima Nova Blk;
+    font-size: 24pt;
 }
