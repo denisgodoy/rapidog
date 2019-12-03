@@ -11,7 +11,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
 });
 
-function busca(event){
-    if(event.key === "Enter"){
-    }
+let botao = document.querySelector('.refresh');
+botao.onclick = function refresh(){
+    window.history.back();
 }
