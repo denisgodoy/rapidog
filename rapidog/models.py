@@ -59,3 +59,6 @@ class Loja(models.Model):
 
     def __str__(self):
         return self.nome_loja
+
+class Newsletter(models.Model):
+    email = models.EmailField(max_length=140)
