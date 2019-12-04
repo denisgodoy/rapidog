@@ -110,3 +110,11 @@ def search(request):
             results = Produto.objects.filter(queryset, categoria='alimentacao').distinct()
     
     return render(request, 'alimentacao.html', {'query':query})
+
+def render_newsletter():
+    if request.method == 'POST':
+        newsletter = NewsletterForm(request.POST)
+        newsletter.save()
+        return render(request, 'realizado.html')
+
+    return render(request, 'layout.html', {'form': NewsletterForm})
