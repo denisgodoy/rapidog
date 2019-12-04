@@ -23,6 +23,7 @@ body {
     height: 30px;
     width: 30px;
     border: none;
+    cursor: pointer;
 }
 
 #buscaProdutos {
@@ -635,4 +636,10 @@ p {
 .textoResultado {
     font-family: Proxima Nova Blk;
     font-size: 24pt;
+}
+
+.logo{
+    height: 60px;
+    margin-leFt: 15px;
+    width: 215px;
 }
