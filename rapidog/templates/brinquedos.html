@@ -9,13 +9,13 @@
             <button class="botaoBusca" type="submit"></button>
         </form>
     {% if query %}
-        {% if results %}
+        {% if resultados %}
         <div class="divBusca">
             <h1 class="textoResultado">Resultados da busca "{{query}}" em Brinquedos</h1>
             <button class="refresh">Limpar busca</button>
         </div>
         <div class=displayProdutos>
-            {% for produto in results %}
+            {% for produto in resultados %}
             <div id="produto">
                 <img src="../../../{{produto.imagem.url}}" alt="">
                 <p class="produtoDescricao">{{produto.nome_produto}}</p>

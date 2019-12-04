@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.db.models import Q
 from rapidog.models import *
+from rapidog.forms import NewsletterForm
 
 # Create your views here.
 
@@ -26,7 +27,7 @@ def alimentacao(request):
 
 
     if query:
-            queryset = (Q(nome_produto__contains=query)) | (Q(marca__contains=query))
+            queryset = (Q(nome_produto__icontains=query)) | (Q(marca__icontains=query))
             resultados = Produto.objects.filter(queryset, categoria='alimentacao').order_by('-id')
     else:
         resultados = []
@@ -44,7 +45,7 @@ def higiene(request):
     higiene = Produto.objects.filter(disponivel=True, categoria='higiene').order_by('-id')
 
     if query:
-            queryset = (Q(nome_produto__contains=query)) | (Q(marca__contains=query))
+            queryset = (Q(nome_produto__icontains=query)) | (Q(marca__icontains=query))
             resultados = Produto.objects.filter(queryset, categoria='higiene').order_by('-id')
     else:
         resultados = []
@@ -62,8 +63,8 @@ def brinquedos(request):
     brinquedos = Produto.objects.filter(disponivel=True, categoria='brinquedos').order_by('-id')
 
     if query:
-            queryset = (Q(nome_produto__contains=query)) | (Q(marca__contains=query))
-            resultados = Produto.objects.filter(queryset, categoria='higiene').order_by('-id')
+            queryset = (Q(nome_produto__icontains=query)) | (Q(marca__icontains=query))
+            resultados = Produto.objects.filter(queryset, categoria='brinquedos').order_by('-id')
     else:
         resultados = []
 
@@ -92,22 +93,8 @@ def busca(request):
     query = request.GET.get('q','')
 
     if query:
-<<<<<<< HEAD
-            queryset = (Q(nome_produto__icontains=query)) | (Q(marca__icontains=query))
-            results = Produto.objects.filter(queryset, categoria='alimentacao').distinct()
-    
-    return render(request, 'alimentacao.html', {'query':query})
-
-def render_newsletter():
-    if request.method == 'POST':
-        newsletter = NewsletterForm(request.POST)
-        newsletter.save()
-        return render(request, 'realizado.html')
-
-    return render(request, 'layout.html', {'form': NewsletterForm})
-=======
-            queryset = (Q(nome_produto__contains=query)) | (Q(marca__contains=query))
-            resultados = Produto.objects.filter(queryset).order_by('-id')
+        queryset = (Q(nome_produto__icontains=query)) | (Q(marca__icontains=query))
+        resultados = Produto.objects.filter(queryset).order_by('-id')
             
     else:
         resultados = []
@@ -118,4 +105,11 @@ def render_newsletter():
     }
 
     return render(request, 'busca.html', context)
->>>>>>> af7fe1bdf29e9b42a15f643380c12c82b88a27c0
+
+def render_newsletter(request):
+    newsletter = NewsletterForm(request.POST or None)
+
+    if newsletter.is_valid():
+        newsletter.save()
+
+    return render(request, 'sucesso.html')

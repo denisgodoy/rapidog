@@ -61,12 +61,7 @@ class Loja(models.Model):
         return self.nome_loja
 
 class Newsletter(models.Model):
-<<<<<<< HEAD
     email = models.EmailField(max_length=140)
-=======
-    nome = models.CharField(max_length=100)
-    email = models.EmailField()
 
     def __str__(self):
         return self.email
->>>>>>> af7fe1bdf29e9b42a15f643380c12c82b88a27c0

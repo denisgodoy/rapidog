@@ -27,9 +27,6 @@ urlpatterns = [
     path('produtos/higiene/', views.higiene),
     path('produtos/brinquedos/', views.brinquedos),
     path('petshops/', views.lojas),
-<<<<<<< HEAD
-    path('layout/realizado/', views.render_newsletter),
-=======
+    path('sucesso/', views.render_newsletter),
     path('busca/', views.busca),
->>>>>>> af7fe1bdf29e9b42a15f643380c12c82b88a27c0
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
