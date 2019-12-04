@@ -32,7 +32,8 @@
         <div class="footerNews">
             <div class="newsletter">
                 <p>Assine nossa Newsletter</p>
-                <form>
+                <form method="POST">
+                    {% csrf_token %}
                     <input class="formEmail" type="email" name="" id="">
                     <button class="formBotao" type="submit">Enviar</button>
                 </form>
