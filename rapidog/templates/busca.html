@@ -9,13 +9,13 @@
             <button class="botaoBusca" type="submit"></button>
         </form>
     {% if query %}
-        {% if results %}
+        {% if resultados %}
         <div class="divBusca">
-            <h1 class="textoResultado">Resultados da busca "{{query}}" em Brinquedos</h1>
+            <h1 class="textoResultado">Resultados da busca "{{query}}"</h1>
             <button class="refresh">Limpar busca</button>
         </div>
         <div class=displayProdutos>
-            {% for produto in results %}
+            {% for produto in resultados %}
             <div id="produto">
                 <img src="../../../{{produto.imagem.url}}" alt="">
                 <p class="produtoDescricao">{{produto.nome_produto}}</p>
@@ -30,16 +30,8 @@
         </div>
         {% endif %}
     {% else %}
-        <h1>Brinquedos</h1>
-        <div class=displayProdutos>
-            {% for produto in brinquedos %}    
-            <div id="produto">
-                <img src="../../../{{produto.imagem.url}}" alt="">
-                <p class="produtoDescricao">{{produto.nome_produto}}</p>
-                <p class="produtoMarca">{{produto.marca}}</p>
-                <p class="produtoPreco">R$ {{produto.preco}}</p>
-            </div>
-            {% endfor %}
+        <h1>Faça sua busca</h1>
+        <h2>Buscas mais comuns</h2>
         </div>
     {% endif %}
     </div>

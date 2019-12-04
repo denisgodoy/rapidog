@@ -5,3 +5,4 @@ from rapidog.models import *
 
 admin.site.register(Produto)
 admin.site.register(Loja)
+admin.site.register(Newsletter)

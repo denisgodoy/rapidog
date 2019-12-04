@@ -21,73 +21,59 @@ def produtos(request):
     return render(request, 'produtos.html', context)
 
 def alimentacao(request):
+    query = request.GET.get('q','')
     alimentacao = Produto.objects.filter(disponivel=True, categoria='alimentacao').order_by('-id')
 
+
+    if query:
+            queryset = (Q(nome_produto__contains=query)) | (Q(marca__contains=query))
+            resultados = Produto.objects.filter(queryset, categoria='alimentacao').order_by('-id')
+    else:
+        resultados = []
+
     context = {
-        'alimentacao': alimentacao
+        'query': query,
+        'resultados': resultados,
+        'alimentacao': alimentacao,
     }
-    
+
     return render(request, 'alimentacao.html', context)
 
-# def buscarAlimentacao(request):
-#     query = request.GET.get(**kwargs)
-
-#     if query and busca != '':
-#         resultado = Produto.objects.filter(nome_produto__icontains=query, disponivel=True, categoria='alimentacao')
-#     else:
-#        alimentacao()
-
-#     context = {
-#         'busca': resultado,
-#     }
-
-#     return render(request, 'alimentacao.html', context)
-
 def higiene(request):
+    query = request.GET.get('q','')
     higiene = Produto.objects.filter(disponivel=True, categoria='higiene').order_by('-id')
 
+    if query:
+            queryset = (Q(nome_produto__contains=query)) | (Q(marca__contains=query))
+            resultados = Produto.objects.filter(queryset, categoria='higiene').order_by('-id')
+    else:
+        resultados = []
+
     context = {
-        'higiene': higiene
+        'query': query,
+        'resultados': resultados,
+        'higiene': higiene,
     }
 
     return render(request, 'higiene.html', context)
 
-# def buscarHigiene(request):
-#     query = request.GET.get('busca')
-
-#     if query and busca != '':
-#         resultado = Produto.objects.filter(nome_produto__icontains=query, disponivel=True, categoria='higiene')
-#     else:
-#         higiene()
-
-#     context = {
-#         'busca': resultado
-#     }
-
-#     return render(request, 'higiene.html', context)
-
 def brinquedos(request):
+    query = request.GET.get('q','')
     brinquedos = Produto.objects.filter(disponivel=True, categoria='brinquedos').order_by('-id')
 
+    if query:
+            queryset = (Q(nome_produto__contains=query)) | (Q(marca__contains=query))
+            resultados = Produto.objects.filter(queryset, categoria='higiene').order_by('-id')
+    else:
+        resultados = []
+
     context = {
-        'brinquedos': brinquedos
+        'query': query,
+        'resultados': resultados,
+        'brinquedos': brinquedos,
     }
 
     return render(request, 'brinquedos.html', context)
-
-# def buscarBrinquedos(request):
-#     query = request.GET.get('busca')
-
-#     if query and busca != '':
-#         resultado = Produto.objects.filter(nome_produto__icontains=query, disponivel=True, categoria='brinquedos')
-#     else: 
-#         brinquedos()
-    
-#     context = {
-#         'brinquedos': resultado
-#     }
-
-#     return render(request, 'brinquedos.html', context)
 
 def lojas(request):
     anunciar = Loja.objects.filter(anunciar=True)[:3]
@@ -102,10 +88,11 @@ def lojas(request):
 
     return render(request, 'petshops.html', context)
 
-def search(request):
+def busca(request):
     query = request.GET.get('q','')
 
     if query:
+<<<<<<< HEAD
             queryset = (Q(nome_produto__icontains=query)) | (Q(marca__icontains=query))
             results = Produto.objects.filter(queryset, categoria='alimentacao').distinct()
     
@@ -118,3 +105,17 @@ def render_newsletter():
         return render(request, 'realizado.html')
 
     return render(request, 'layout.html', {'form': NewsletterForm})
+=======
+            queryset = (Q(nome_produto__contains=query)) | (Q(marca__contains=query))
+            resultados = Produto.objects.filter(queryset).order_by('-id')
+            
+    else:
+        resultados = []
+
+    context = {
+        'query': query,
+        'resultados': resultados,
+    }
+
+    return render(request, 'busca.html', context)
+>>>>>>> af7fe1bdf29e9b42a15f643380c12c82b88a27c0
