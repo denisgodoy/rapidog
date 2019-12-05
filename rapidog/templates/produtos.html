@@ -21,12 +21,14 @@
         </div>
         <div class=displayProdutos>
             {% for produto in alimentacao %}
-            <div id="produto">
-                <img src="../{{produto.imagem.url}}" alt="">
-                <p class="produtoDescricao">{{produto.nome_produto}}</p>
-                <p class="produtoMarca">{{produto.marca}}</p>
-                <p class="produtoPreco">R$ {{produto.preco}}</p>
-            </div>
+            <a href="{% url 'detalhe_produto' produto.id %}">
+                <div id="produto">
+                    <img src="../{{produto.imagem.url}}" alt="">
+                    <p class="produtoDescricao">{{produto.nome_produto}}</p>
+                    <p class="produtoMarca">{{produto.marca}}</p>
+                    <p class="produtoPreco">R$ {{produto.preco}}</p>
+                </div>
+            </a>
             {% endfor %}
         </div>
         <div class="divCategoria">
@@ -35,12 +37,14 @@
         </div>        
             <div class=displayProdutos>
             {% for produto in higiene %}
-            <div id="produto">
-                <img src="../{{produto.imagem.url}}" alt="">
-                <p class="produtoDescricao">{{produto.nome_produto}}</p>
-                <p class="produtoMarca">{{produto.marca}}</p>
-                <p class="produtoPreco">R$ {{produto.preco}}</p>
-            </div>
+            <a href="{% url 'detalhe_produto' produto.id %}">
+                <div id="produto">
+                    <img src="../{{produto.imagem.url}}" alt="">
+                    <p class="produtoDescricao">{{produto.nome_produto}}</p>
+                    <p class="produtoMarca">{{produto.marca}}</p>
+                    <p class="produtoPreco">R$ {{produto.preco}}</p>
+                </div>
+            </a>
             {% endfor %}
         </div>
         <div class="divCategoria">
@@ -49,12 +53,14 @@
         </div>
         <div class=displayProdutos>
             {% for produto in brinquedos %}
-            <div id="produto">
-                <img src="../{{produto.imagem.url}}" alt="">
-                <p class="produtoDescricao">{{produto.nome_produto}}</p>
-                <p class="produtoMarca">{{produto.marca}}</p>
-                <p class="produtoPreco">R$ {{produto.preco}}</p>
-            </div>
+            <a href="{% url 'detalhe_produto' produto.id %}">
+                <div id="produto">
+                    <img src="../{{produto.imagem.url}}" alt="">
+                    <p class="produtoDescricao">{{produto.nome_produto}}</p>
+                    <p class="produtoMarca">{{produto.marca}}</p>
+                    <p class="produtoPreco">R$ {{produto.preco}}</p>
+                </div>
+            </a>
             {% endfor %}
         </div>
     </div>
