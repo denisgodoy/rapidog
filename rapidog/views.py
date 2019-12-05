@@ -6,7 +6,19 @@ from rapidog.forms import NewsletterForm
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+    news = NewsletterForm(request.POST or None)
+
+    if news.is_valid():
+        news.save()
+        context = {
+            'msg': 'Inscrição realizada com sucesso!',
+        }
+        return render(request, 'index.html', context)
+
+    context = {
+        'news': news,
+    }
+    return render(request, 'index.html', context)
 
 def produtos(request):
     alimentacao = Produto.objects.filter(disponivel=True, categoria='alimentacao').order_by('-id')[:5]
@@ -115,11 +127,3 @@ def busca(request):
     }
 
     return render(request, 'busca.html', context)
-
-def render_newsletter(request):
-    newsletter = NewsletterForm(request.POST or None)
-
-    if newsletter.is_valid():
-        newsletter.save()
-
-    return render(request, 'sucesso.html')
