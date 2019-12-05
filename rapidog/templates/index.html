@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
 {% load static %}
+{% load widget_tweaks %}
 
 {% block content %}
 <header>
@@ -22,4 +23,21 @@
         <img src="{% static 'imagens/Mockups_app.png' %}" alt="Imagem de dois celulares com o aplicativo rapidog aberto.">
     </div>
 </header>
+    <div class="newsletter">
+        {% if news %}
+        <p>Assine nossa Newsletter</p>
+        <form method="POST">
+        {% csrf_token %}
+        {% with WIDGET_REQUIRED_CLASS='formEmail' %}
+        {% render_field news.email %}
+        {% endwith %}
+        <button class="formBotao" type="submit">Enviar</button>
+        </form>
+        {% endif %}
+        {% if msg %}
+        <div class="msg">
+            <p>{{ msg }}</p>
+        </div>
+        {% endif %}
+    </div>
 {% endblock %}     
