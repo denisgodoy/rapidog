@@ -127,3 +127,12 @@ def busca(request):
     }
 
     return render(request, 'busca.html', context)
+
+def detalhe_produto(request,pk):
+    produto = Produto.objects.get(id = pk)
+
+    context = {
+        'produto': produto,
+    }
+    
+    return render(request, 'produto.html', context)
