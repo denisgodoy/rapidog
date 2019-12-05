@@ -4,8 +4,8 @@
 {% block content %}
 <main id="lojas">
     <div class="tabelaLojas">
-            <form class="formBusca" method="GET" onkeypress="busca" action="">
-                <input type="search" name="Busca" id="buscaProdutos" placeholder="Busque por bairro ou nome"></input>
+            <form class="formBusca" method="GET" action=".">
+                <input type="search" name="q" id="buscaProdutos" placeholder="Busque por bairro ou nome"></input>
                 <button class="botaoBusca" type="submit"></button>
             </form>
         {% if anuncios %}
@@ -18,6 +18,46 @@
             {% endfor %}
         </div>
         {% endif %}
+    {% if query %}
+        {% if resultados %}
+        <div class="divBusca">
+            <h1 class="textoResultado">Resultados da busca "{{query}}" em Pet Shops</h1>
+            <button class="refresh">Limpar busca</button>
+        </div>
+        <div class=displayLojas>
+            {% for loja in resultados %}
+            <div id="loja">
+                <img src="../{{loja.logotipo.url}}" alt=""></img>
+                <p class="lojaNome">{{loja.nome_loja}}</p>
+                <div class="servicos">
+                    {% if loja.banho %}
+                    <div>
+                        <p class="servico">Banho</p>
+                        <p id="preco">R$ {{loja.preco_banho}}</p>
+                    </div>
+                    {% endif %}
+                    {% if loja.tosa %}
+                    <div>
+                        <p class="servico">Tosa</p>
+                        <p id="preco">R$ {{loja.preco_tosa}}</p>
+                    </div>
+                    {% endif %}
+                    {% if loja.combo %}
+                    <div>
+                        <p class="servico">Combo</p>
+                        <p id="preco">R$ {{loja.preco_combo}}</p>
+                    </div>
+                    {% endif %}
+                </div> 
+            </div>
+            {% endfor %}
+        {% else %}
+        <div class="divBusca">
+            <h1 class="textoResultado">Sua busca por "{{query}}" não retornou resultados</h1>
+            <button class="refresh">Limpar busca</button>
+        </div>
+        {% endif %}
+    {% else %}
         <div class="divBairro">
             <h1>Pet Shops mais bem avaliados</h1>
             <a href="" class="ancoraBairro">Ver mais pet shops</a>
@@ -82,6 +122,7 @@
             </div>
             {% endfor %}
         </div>
+    {% endif %}
     </div>
 </main>
 {% endblock %} 

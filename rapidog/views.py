@@ -80,11 +80,21 @@ def lojas(request):
     anunciar = Loja.objects.filter(anunciar=True)[:3]
     jdPaulista = Loja.objects.filter(bairro='Jd Paulista').order_by('-id')[:4]
     consolacao = Loja.objects.filter(bairro='Consolação').order_by('-id')[:4]
+    query = request.GET.get('q','')
+
+    if query:
+        queryset = (Q(nome_loja__icontains=query)) | (Q(bairro__icontains=query))
+        resultados = Loja.objects.filter(queryset).order_by('-id')
+            
+    else:
+        resultados = []
 
     context = {
         'anuncios': anunciar,
         'jdPaulista': jdPaulista,
         'consolacao': consolacao,
+        'resultados': resultados,
+        'query': query,
     }
 
     return render(request, 'petshops.html', context)
