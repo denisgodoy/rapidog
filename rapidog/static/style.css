@@ -89,6 +89,9 @@ body {
     flex-flow: row;
 }
 
+.divCategoria > a {
+    text-decoration: none;
+}
 .divConteudo {
     align-items: center;    
     display: flex;
@@ -327,6 +330,10 @@ header {
     height: 80px;
     justify-content: center;
     width: 100%;
+}
+
+.newsletter > p {
+    margin: 0;
 }
 
 p {
@@ -644,4 +651,128 @@ p {
 
 .displayProdutos > a {
     text-decoration: none;
+}
+
+.tabelaDetalhes {
+    background-color: white;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 580px;
+    margin-top: 100px;
+    width: 98%;
+}
+
+.produtoAtributos {
+    width: 30%;
+    height: 70%;
+}
+
+.produtoImagem {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.produtoTexto {
+    font-size: 9pt;
+    padding: 10px 25px 10px 25px;
+    text-align: justify;
+    /* background-color: rgb(222, 243, 243); */
+}
+
+.atributoNome {
+    font-size: 20pt;
+    margin-bottom: 5px;
+    color: #0E1122;
+}
+
+.atributoMarca {
+    text-transform: uppercase;
+    font-size: 10pt;
+    color: white;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    background-color: #A1A1A1;
+    width: 80px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.atributoPreco {
+    font-size: 30pt;
+    margin: 0;
+    margin-bottom: 10px;
+    color: #0E1122;
+}
+
+.atributoDescricao {
+    font-size: 10pt;
+    color: #0E1122;
+    font-family: Proxima Nova Xbold;
+    text-align: justify;
+}
+
+.produtoImagem > img {
+    width: 80%;
+    height: 80%;
+}
+
+.indisponivel {
+    font-family: Proxima Nova Blk;
+    color: rgb(236, 74, 74);
+}
+
+.similares {
+    height: 90%;
+    border-left: rgb(209, 212, 236);
+    border-left-style: solid;
+    border-left-width: .5px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#produtoSimilar {
+    align-items: center;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    margin-bottom: 20px;
+    width: 230px;
+    cursor: pointer;
+}
+
+.similares > a {
+    text-decoration: none;
+}
+
+.similares > h3 {
+    font-family: Proxima Nova Xbold;
+    margin: 20px 0 20px 0;
+    text-transform: uppercase;
+    font-size: 11pt;
+    color: #01B5B2;
+    margin: 20px 0 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
+
+#produtoSimilar:hover {
+    box-shadow: 5px 5px 15px  rgb(219, 219, 219);
+}
+
+#produtoSimilar img {
+    height: 100px;
+    margin-top: 10px;
+    width: 100px;
+    margin-bottom: 10px;
 }

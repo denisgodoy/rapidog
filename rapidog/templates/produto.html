@@ -2,13 +2,36 @@
 
 {% block content %}
 <main id="produtos">
-    <div class="tabelaProdutos">
-        <div id="produto">
-            <img src="../../{{produto.imagem.url}}" alt="">
-            <p class="produtoDescricao">{{produto.nome_produto}}</p>
-            <p class="produtoMarca">{{produto.marca}}</p>
-            <p class="produtoPreco">R$ {{produto.preco}}</p>
+    <div class="tabelaDetalhes">
+        <div class="produtoImagem">
+                <img src="../../{{produto.imagem.url}}" alt="">
         </div>
-    </div>
+        <div class="produtoAtributos">
+            <p class="atributoNome">{{produto.nome_produto}}</p>
+            <p class="atributoMarca">{{produto.marca}}</p>
+            <p class="atributoPreco">R$ {{produto.preco}}</p>
+            <p class="atributoDescricao">{{produto.descricao}}</p>
+            {% if produto.disponivel %}
+            <button type="button" class="btn btn-success btn-sm"><i class="fa fa-check-circle" aria-hidden="true"></i> Comprar</button>
+            <button type="button" class="btn btn-secondary btn-sm"><i class="fa fa-cart-plus" aria-hidden="true"></i> Adicionar</button>
+            {% else %}
+            <h6 class="indisponivel">Produto indisponível no momento :(</h6>
+            <button type="button" class="btn btn-success btn-sm" disabled><i class="fa fa-check-circle" aria-hidden="true"></i> Comprar</button>
+            <button type="button" class="btn btn-secondary btn-sm" disabled><i class="fa fa-cart-plus" aria-hidden="true"></i> Adicionar</button>
+            {% endif %}
+        </div>
+        <div class="similares">
+            <h3>Você poderá gostar</h3>
+            {% for produto in similares %}
+            <a href="{% url 'detalhe_produto' produto.id %}">
+                <div id="produtoSimilar">
+                    <img src="../../{{produto.imagem.url}}" alt="">
+                    <p class="produtoDescricao">{{produto.nome_produto}}</p>
+                    <p class="produtoMarca">{{produto.marca}}</p>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div> 
 </main>
 {% endblock %}
