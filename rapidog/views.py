@@ -130,9 +130,11 @@ def busca(request):
 
 def detalhe_produto(request,pk):
     produto = Produto.objects.get(id = pk)
+    similares = Produto.objects.exclude(id = pk).order_by('?')[:2]
 
     context = {
         'produto': produto,
+        'similares': similares,
     }
     
     return render(request, 'produto.html', context)
