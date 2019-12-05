@@ -1,5 +1,4 @@
 body {
-    background-color: #01B5B2;
     margin: 0 auto;
 }
 
@@ -641,4 +640,8 @@ p {
     height: 50px;
     margin-leFt: 35px;
     width: 185px;
+}
+
+.displayProdutos > a {
+    text-decoration: none;
 }

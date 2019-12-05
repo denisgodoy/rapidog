@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<main id="produtos">
+    <div class="tabelaProdutos">
+        <div id="produto">
+            <img src="../../{{produto.imagem.url}}" alt="">
+            <p class="produtoDescricao">{{produto.nome_produto}}</p>
+            <p class="produtoMarca">{{produto.marca}}</p>
+            <p class="produtoPreco">R$ {{produto.preco}}</p>
+        </div>
+    </div>
+</main>
+{% endblock %}
