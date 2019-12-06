@@ -776,3 +776,9 @@ p {
     width: 100px;
     margin-bottom: 10px;
 }
+
+/* Login */
+
+.auth-card {
+    margin-bottom: 30px;
+}
