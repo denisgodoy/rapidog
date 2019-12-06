@@ -16,7 +16,7 @@
         </div>
         <div class=displayProdutos>
             {% for produto in resultados %}
-            <a href="{% url 'detalhe_produto' produto.id %}">    
+            <a href="{% url 'detalhe_produto' produto.slug %}">    
                 <div id="produto">
                     <img src="../../../{{produto.imagem.url}}" alt="">
                     <p class="produtoDescricao">{{produto.nome_produto}}</p>
@@ -35,7 +35,7 @@
         <h1>Alimentação</h1>
         <div class=displayProdutos>
             {% for produto in alimentacao %}
-            <a href="{% url 'detalhe_produto' produto.id %}">    
+            <a href="{% url 'detalhe_produto' produto.slug %}">    
                 <div id="produto">
                     <img src="../../../{{produto.imagem.url}}" alt="">
                     <p class="produtoDescricao">{{produto.nome_produto}}</p>

@@ -21,9 +21,9 @@
             {% endif %}
         </div>
         <div class="similares">
-            <h3>Você poderá gostar</h3>
+            <h3>Poderá gostar também</h3>
             {% for produto in similares %}
-            <a href="{% url 'detalhe_produto' produto.id %}">
+            <a href="{% url 'detalhe_produto' produto.slug %}">    
                 <div id="produtoSimilar">
                     <img src="../../{{produto.imagem.url}}" alt="">
                     <p class="produtoDescricao">{{produto.nome_produto}}</p>
