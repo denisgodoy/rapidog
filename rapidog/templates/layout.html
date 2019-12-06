@@ -19,13 +19,21 @@
         <div class="navLogo">
              <a href="/"><img class="logo" src="{% static 'imagens/logotipo.png' %}"></a>
         </div>
-         <div class="navAncoras">
+        <div class="navAncoras">
             <a href="/">Sobre</a>
             <a href="/petshops">Encontrar Pet Shops</a>
-            <a href="/produtos">Comprar Produtos</a>
+            <button class="dropbtn" onclick="dropdown()">Comprar Produtos 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="/produtos">Ver Todos</a>
+                <a href="/produtos/alimentacao">Alimentação</a>
+                <a href="/produtos/brinquedos">Brinquedos</a>
+                <a href="/produtos/higiene">Higiene & Saúde</a>
+            </div>
             <a href="">Contato</a>
             <a href="">Login</a>
-        </div>
+        </div>    
     </nav>
     {% block content %}
 
