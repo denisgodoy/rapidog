@@ -840,6 +840,9 @@ p {
 }
 
 /* Login */
+.container-fluid .row {
+    margin: 0;
+}
 
 .auth-card {
     margin-bottom: 30px;
