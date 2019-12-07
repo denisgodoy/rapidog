@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rapidog',
     'widget_tweaks',
     'crispy_forms',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -128,6 +129,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, MEDIA_URL)
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL = 'petshops/'
+LOGIN_REDIRECT_URL = '/'
 
-LOGOUT_REDIRECT_URL = '/accouts/login'
+LOGOUT_REDIRECT_URL = '/accounts/login'
