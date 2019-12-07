@@ -19,6 +19,7 @@ from rapidog import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
@@ -29,5 +30,7 @@ urlpatterns = [
     path('petshops/', views.lojas),
     path('busca/', views.busca),
     path('produtos/<slug:slug>/', views.detalhe_produto, name='detalhe_produto'),
-    path('account/', include('django.contrib.auth.urls')),
+    path('accounts/', include('accounts.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/login/', include('django.contrib.auth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
