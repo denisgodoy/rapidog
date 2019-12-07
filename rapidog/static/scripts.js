@@ -15,3 +15,16 @@ let botao = document.querySelector('.refresh');
 botao.onclick = function refresh(){
     window.history.back();
 }
+
+function dropdown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+  
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+    let myDropdown = document.getElementById("myDropdown");
+        if (myDropdown.classList.contains('show')) {
+            myDropdown.classList.remove('show');
+        }
+    }
+}

@@ -21,7 +21,7 @@
         </div>
         <div class=displayProdutos>
             {% for produto in alimentacao %}
-            <a href="{% url 'detalhe_produto' produto.id %}">
+            <a href="{% url 'detalhe_produto' produto.slug %}">    
                 <div id="produto">
                     <img src="../{{produto.imagem.url}}" alt="">
                     <p class="produtoDescricao">{{produto.nome_produto}}</p>
@@ -37,7 +37,7 @@
         </div>        
             <div class=displayProdutos>
             {% for produto in higiene %}
-            <a href="{% url 'detalhe_produto' produto.id %}">
+            <a href="{% url 'detalhe_produto' produto.slug %}">    
                 <div id="produto">
                     <img src="../{{produto.imagem.url}}" alt="">
                     <p class="produtoDescricao">{{produto.nome_produto}}</p>
@@ -53,7 +53,7 @@
         </div>
         <div class=displayProdutos>
             {% for produto in brinquedos %}
-            <a href="{% url 'detalhe_produto' produto.id %}">
+            <a href="{% url 'detalhe_produto' produto.slug %}">    
                 <div id="produto">
                     <img src="../{{produto.imagem.url}}" alt="">
                     <p class="produtoDescricao">{{produto.nome_produto}}</p>

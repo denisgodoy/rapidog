@@ -28,6 +28,6 @@ urlpatterns = [
     path('produtos/brinquedos/', views.brinquedos),
     path('petshops/', views.lojas),
     path('busca/', views.busca),
-    path('produtos/<int:pk>/', views.detalhe_produto, name="detalhe_produto"),
+    path('produtos/<slug:slug>/', views.detalhe_produto, name='detalhe_produto'),
     path('account/', include('django.contrib.auth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

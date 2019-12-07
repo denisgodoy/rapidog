@@ -129,9 +129,9 @@ def busca(request):
 
     return render(request, 'busca.html', context)
 
-def detalhe_produto(request,pk):
-    produto = Produto.objects.get(id = pk)
-    similares = Produto.objects.exclude(id = pk).order_by('?')[:2]
+def detalhe_produto(request,slug):
+    produto = Produto.objects.get(slug = slug)
+    similares = Produto.objects.exclude(slug = slug).order_by('?')[:2]
 
     context = {
         'produto': produto,

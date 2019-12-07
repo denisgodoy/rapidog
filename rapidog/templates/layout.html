@@ -7,9 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script defer src="{% static 'scripts.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <link rel="shortcut icon" href="{% static 'imagens/icones/favicon-rapidog.png' %}" type="image/x-icon">
     <title>rapidog - o app do seu pet shop</title>
 </head>
@@ -18,10 +19,18 @@
         <div class="navLogo">
              <a href="/"><img class="logo" src="{% static 'imagens/logotipo.png' %}"></a>
         </div>
-         <div class="navAncoras">
+        <div class="navAncoras">
             <a href="/">Sobre</a>
             <a href="/petshops">Encontrar Pet Shops</a>
-            <a href="/produtos">Comprar Produtos</a>
+            <button class="dropbtn" onclick="dropdown()">Comprar Produtos 
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+                <a href="/produtos">Ver Todos</a>
+                <a href="/produtos/alimentacao">Alimentação</a>
+                <a href="/produtos/brinquedos">Brinquedos</a>
+                <a href="/produtos/higiene">Higiene & Saúde</a>
+            </div>
             <a href="">Contato</a>
             <a href="/accounts/login">Login</a>
             {% if user.is_authenticated %}
