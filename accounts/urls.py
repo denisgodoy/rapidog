@@ -1,7 +1,8 @@
 from django.urls import path
-from rapidog import views
+from . import views
 
+app_name = 'account'
 
 urlpatterns = [
-    path('register/', views.SignUpView.as_view(), name='signup')
+    path('register/', views.register.as_view(), name='registrar')
 ]
