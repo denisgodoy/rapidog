@@ -34,7 +34,10 @@
             <a href="">Contato</a>
             <a href="/accounts/login">Login</a>
             {% if user.is_authenticated %}
+            <p class="username">
             <a href="/accounts/logout">Sair</a>
+            Olá {{ user.username }}! 
+            </p>
             {% endif %}
         </div>
     </nav>
