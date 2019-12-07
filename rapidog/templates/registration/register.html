@@ -5,22 +5,27 @@
 {% block title %}Cadastro{% endblock%}
 
 {% block content %}
-    <div class="container">
-    <div class="row">
-        <div class="ccol-md-4 offset-md-4">
-            <div class="card  auth-card">
-                <div class="card-body">
-                    <h4 class="card-title text-center">Cadastro</h4>
-                    <form method="POST">
-                        {% csrf_token %}
-                        <input type="hidden" name="next" value="{{ next }}">
+<main id="produtos">
+    <div class="tabelaDetalhes">
+            <div class="container">
+                    <div class="rowregister">
+                        <div class="ccol-md-4 offset-md-4">
+                            <div class="card  auth-card">
+                                <div class="card-body">
+                                    <h4 class="card-title text-center">Cadastro</h4>
+                                    <form method="POST">
+                                        {% csrf_token %}
+                                        <input type="hidden" name="next" value="{{ next }}">
 
-                        {{ form|crispy }}
-                        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
-                    </form>
-                </div>
+                                        {{ form|crispy }}
+                                        <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                                    </form>
+                                    <p class="change-form-p">Já é cadastrado? <a class="clique" href="/accounts/login">faça seu login</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
-        </div>
-    </div>
-    </div>
-{% endblock %} 
+    </div> 
+</main>
+{% endblock %}
