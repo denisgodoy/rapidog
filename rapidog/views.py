@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from rapidog.models import *
 from rapidog.forms import NewsletterForm
@@ -138,3 +139,5 @@ def detalhe_produto(request,pk):
     }
     
     return render(request, 'produto.html', context)
+
+# add @login_required em todas as views de usuario
