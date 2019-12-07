@@ -128,6 +128,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, MEDIA_URL)
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'petshops/'
 
-LOGOUT_REDIRECT_URL = '/accout/login'
+LOGOUT_REDIRECT_URL = '/accouts/login'
