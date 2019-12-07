@@ -840,10 +840,41 @@ p {
 }
 
 /* Login */
+
+.container {
+    width: 100%;
+}
+
+.row {
+        width: 60em;
+        height: 40em;
+        padding: 8em;
+}
 .container-fluid .row {
     margin: 0;
 }
 
 .auth-card {
     margin-bottom: 30px;
+    border-radius: 1em 1em 1em 1em;
+}
+
+.change-form-p {
+    margin-top: 30px;
+    text-align: center;
+    color: #01B5B2;
+}
+
+.card-title {
+    color: #01B5B2;
+    font-family: Proxima Nova Xbold;
+}
+.clique {
+    color: #0E1122;
+}
+
+.rowregister{
+    width: 50em;
+    height: 40em;
+    padding: 1em;
 }
