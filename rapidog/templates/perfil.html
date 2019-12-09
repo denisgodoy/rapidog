@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block content %}
+<main id="produtos">
+    <div class="tabelaProdutos">
+        <div>
+            {% if user.is_authenticated %}
+            <p>Olá {{user.username}}</p>
+            <form method="POST">
+            {% csrf_token %}
+            {% with WIDGET_REQUIRED_CLASS='formEmail' %}
+            {% render_field usuario.cidade %}
+            {% render_field usuario.nascimento %}
+            {% endwith %}
+            <button class="formBotao" type="submit">Enviar</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>  
+</main>
+{% endblock %}     
