@@ -3,41 +3,41 @@
 {% load widget_tweaks %}
 
 {% block content %}
-<header>
-    <div class="divConteudo">
-        <div class="texto">
-            <h1>Teu dia mais fácil,<br><span>seu pet mais feliz!<span></h1>
-            <p class="p1">Com Rapidog você encontra tudo o que precisa para seu pet! De produtos alimentícios, higiene e brinquedos ao pet shop de confiança mais próximo de você.</p>
-            <a href="/petshops"><button class="conteudoBotao">Encontrar Pet Shops</button></a>
-            <a href="/produtos"><button class="conteudoBotao">Comprar Produtos</button></a>
-            <div class="divDownload">
+<header class="index">
+    <div class="index-conteudo">
+        <div class="conteudo-texto">
+            <h1>Teu dia mais fácil, seu pet mais feliz!</h1>
+            <p>Com Rapidog você encontra tudo o que precisa para seu pet! De produtos alimentícios, higiene e brinquedos ao pet shop de confiança mais próximo de você.</p>
+            <a href="/petshops"><button class="conteudo-botao">Encontrar Pet Shops</button></a>
+            <a href="/produtos"><button class="conteudo-botao">Comprar Produtos</button></a>
+            <div class="conteudo-download">
                 <p>Baixe o aplicativo e aproveite!</p>
-                <div class="divDownImg">
-                    <img class="divDownGoogle" src="{% static 'imagens/badge-google-play.png' %}" alt="">
-                    <img class="divDownApple" src="{% static 'imagens/badge-ios.png' %}" alt="">
+                <div class="download-imagem">
+                    <img class="download-imagem-google" src="{% static 'imagens/badge-google-play.png' %}" alt="">
+                    <img class="download-imagem-apple" src="{% static 'imagens/badge-ios.png' %}" alt="">
                 </div>
             </div>
         </div>
     </div>    
-    <div class="divImg">
+    <div class="conteudo-imagem">
         <img src="{% static 'imagens/Mockups_app.png' %}" alt="Imagem de dois celulares com o aplicativo rapidog aberto.">
     </div>
 </header>
-    <div class="newsletter">
-        {% if news %}
-        <p>Assine nossa Newsletter</p>
+<div class="newsletter">
+    {% if news %}
+    <p>Assine nossa Newsletter</p>
+    <div class="newsletter-form">
         <form method="POST">
         {% csrf_token %}
-        {% with WIDGET_REQUIRED_CLASS='formEmail' %}
+        {% with WIDGET_REQUIRED_CLASS='newsletter-form-email' %}
         {% render_field news.email %}
         {% endwith %}
-        <button class="formBotao" type="submit">Enviar</button>
+        <button class="newsletter-form-botao" type="submit">Enviar</button>
         </form>
-        {% endif %}
-        {% if msg %}
-        <div class="msg">
-            <p>{{ msg }}</p>
-        </div>
-        {% endif %}
     </div>
+    {% endif %}
+    {% if msg %}
+        <p>{{ msg }}</p>
+    {% endif %}
+</div>
 {% endblock %}     

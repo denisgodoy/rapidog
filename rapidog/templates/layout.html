@@ -15,64 +15,61 @@
     <title>rapidog - o app do seu pet shop</title>
 </head>
 <body>
-    <nav class="navFixa">
-        <div class="navLogo">
+    <nav class="layout-navbar">
+        <div class="navbar-logo">
              <a href="/"><img class="logo" src="{% static 'imagens/logotipo.png' %}"></a>
         </div>
-        <div class="navAncoras">
+        <div class="navbar-ancoras">
             <a href="/">Sobre</a>
             <a href="/petshops">Encontrar Pet Shops</a>
-            <button class="dropbtn" onclick="dropdown()">Comprar Produtos 
+            <button class="botao-drop" onclick="dropdown()">Comprar Produtos 
                 <i class="fa fa-caret-down"></i>
             </button>
-            <div class="dropdown-content" id="myDropdown">
+            <div class="dropdown-conteudo" id="dropdown">
                 <a href="/produtos">Ver Todos</a>
                 <a href="/produtos/alimentacao">Alimentação</a>
                 <a href="/produtos/brinquedos">Brinquedos</a>
                 <a href="/produtos/higiene">Higiene & Saúde</a>
             </div>
             <a href="">Contato</a>
-            <a href="/accounts/login">Login</a>
             {% if user.is_authenticated %}
-            <p class="username">
+            <a href="">Olá, {{ user.username }}</a>
             <a href="/accounts/logout">Sair</a>
-            Olá {{ user.username }}! 
-            </p>
+            {% else %}
+            <a href="/accounts/login">Login</a>
             {% endif %}
         </div>
+        <img class="nav-menu-responsive" src="{% static 'imagens/icones/menu-respo.png' %}">
     </nav>
     {% block content %}
 
     {% endblock %}
-    <footer>
-        <div class="footerNews">
-            <div class="redessociais">
+        <div class="footer-social">
+            <div class="footer-social-icones">
                     <div><img src="{% static 'imagens/icones/twitter.png' %}" alt="Logotipo Twitter."></div>
                     <div><img src="{% static 'imagens/icones/facebook.png' %}" alt="Logotipo Facebook."></div>
                     <div><img src="{% static 'imagens/icones/linkedin.png' %}" alt="Logotipo LinkedIn."></div>
                     <div><img src="{% static 'imagens/icones/youtube.png' %}" alt="Logotipo YouTube."></div>  
             </div>
         </div>
-        <div class="footerConteudo">
-            <div class="footerRaiz">
+        <footer class="layout-footer">
+        <div class="footer-conteudo">
+            <div class="footer-conteudo-raiz">
                 <p>Menu</p>
                 <ul>
                     <li><a href="/">Sobre</a></li>
                     <li><a href="/petshops">Encontrar Pet Shops</a></li>
                     <li><a href="/produtos">Comprar Produtos</a></li>
                     <li><a href="">Contato</a></li>
-                    <li><a href="">Login</a></li>
+                    <li><a href="/accounts/login">Login</a></li>
                 </ul>
             </div>
-            <div class="footerContato"></div>
-            <div class="footerRedes"></div>
-        </div>
-        <div class="footerCriadores">
-            <p>Criado por Denis, Leandra, Luana e Yasmim. 2019.</p>
+            <div class="footer-conteudo-contato"></div>
+            <div class="footer-conteudo-redes"></div>
         </div>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script defer src="{% static 'scripts.js' %}"></script>
+    <div class="footer-desenv">
+        <p>Desenvolvido por Denis e Leandra. 2019.</p>
+    </div>
 </body>
 </html>

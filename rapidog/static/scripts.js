@@ -1,12 +1,12 @@
 window.addEventListener('DOMContentLoaded', (event) => {
-    jQuery('.navFixa').css("background-color", "");
+    jQuery('.layout-navbar').css("background-color", "");
     jQuery(window).scroll(function() {
         if (jQuery(window).scrollTop() > 10) {
-            jQuery('.navFixa').css("background-color", "#0E1122");
-            jQuery('.navFixa a:hover').css("");
+            jQuery('.layout-navbar').css("background-color", "#0E1122");
+            jQuery('.layout-navbar a:hover').css("");
         } else {
-            jQuery('.navFixa').css("background-color", "");
-            jQuery('.navFixa a:hover').css("");
+            jQuery('.layout-navbar').css("background-color", "");
+            jQuery('.layout-navbar a:hover').css("");
         }
     });
 });
@@ -17,14 +17,14 @@ botao.onclick = function refresh(){
 }
 
 function dropdown() {
-    document.getElementById("myDropdown").classList.toggle("show");
+    document.getElementById("dropdown").classList.toggle("mostrar");
 }
   
 window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-    let myDropdown = document.getElementById("myDropdown");
-        if (myDropdown.classList.contains('show')) {
-            myDropdown.classList.remove('show');
+    if (!event.target.matches('.botao-drop')) {
+    let dropdown = document.getElementById("dropdown");
+        if (dropdown.classList.contains('mostrar')) {
+            dropdown.classList.remove('mostrar');
         }
     }
 }
