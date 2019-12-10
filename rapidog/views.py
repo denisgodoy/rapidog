@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from rapidog.models import *
 from rapidog.forms import NewsletterForm
+from rapidog.forms import ContactForm
 
 # Create your views here.
 
@@ -140,4 +141,12 @@ def detalhe_produto(request,slug):
     
     return render(request, 'produto.html', context)
 
-# add @login_required em todas as views de usuario
+
+def contato(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            pass
+    else:
+        form = ContactForm()
+    return render(request, 'contato.html', {'form': form})
