@@ -560,8 +560,16 @@ p {
     padding: 1em;
 }
 
+.contato {
+    width: 100%;
+    /* height: 100%; */
+}
 
-
+.contato form {
+    width: 50em;
+    height: 37em;
+    padding: 1em;
+}
 
 /* =========== FONTS =========== */
 
