@@ -13,7 +13,7 @@ class ContactForm(forms.Form):
     email = forms.EmailField(max_length=254)
     assunto = forms.CharField(max_length=50)
     mensagem = forms.CharField(
-        max_length=2000,
+        max_length=1000,
         widget=forms.Textarea(),
         help_text='Digite sua mensagem'
     )
