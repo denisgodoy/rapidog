@@ -33,4 +33,5 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('accounts/login/', include('django.contrib.auth.urls')),
     path('perfil/', views.perfil),
+    path('contato/', views.contato),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1050,6 +1050,10 @@ p {
         flex-flow: row wrap;
         justify-content: center;
     }
+    
+    .pAnuncio {
+        display: none;
+    }
 
     .produtoAtributos {
         width: 100%;
@@ -1121,4 +1125,34 @@ p {
     .download-imagem-google {
         width: 47%; 
     }
+}
+
+
+
+/* Contato */
+
+.contato {
+    width: 100%;
+    margin-left: 20%;
+    padding: 5%;
+}
+
+.form-control {
+    width: 60%;
+    height: 5%;
+    padding-top: 0%;
+    padding: 0%;
+    background-color: rgb(246, 251, 252);
+}
+
+.btn-primary {
+    background-color: #01B5B2;
+    border-color: #01B5B2;
+    width: 28%;
+    height: 5%;
+    padding: 0%;
+}
+
+.label {
+    font-family: Proxima Nova Xbold;
 }
