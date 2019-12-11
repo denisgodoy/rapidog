@@ -18,7 +18,7 @@
             {% for produto in resultados %}
             <a href="{% url 'detalhe_produto' produto.slug %}">    
                 <div id="produto">
-                    <img src="../../../{{produto.imagem.url}}" alt="">
+                    <img src="../../../{{produto.imagem.url}}" alt="Imagem de produto.">
                     <p class="produtoDescricao">{{produto.nome_produto}}</p>
                     <p class="produtoMarca">{{produto.marca}}</p>
                     <p class="produtoPreco">R$ {{produto.preco}}</p>
@@ -37,7 +37,7 @@
             {% for produto in higiene %}
             <a href="{% url 'detalhe_produto' produto.slug %}">    
                 <div id="produto">
-                    <img src="../../../{{produto.imagem.url}}" alt="">
+                    <img src="../../../{{produto.imagem.url}}" alt="Imagem de produto.">
                     <p class="produtoDescricao">{{produto.nome_produto}}</p>
                     <p class="produtoMarca">{{produto.marca}}</p>
                     <p class="produtoPreco">R$ {{produto.preco}}</p>

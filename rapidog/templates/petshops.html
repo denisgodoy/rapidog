@@ -13,7 +13,7 @@
         <div class=divBanners>
             {% for anuncio in anuncios %}
             <div>
-                <img src="../{{anuncio.anuncio.url}}" alt="">
+                <img src="../{{anuncio.anuncio.url}}" alt="Imagem promocional.">
             </div>
             {% endfor %}
         </div>
@@ -27,7 +27,7 @@
         <div class=displayLojas>
             {% for loja in resultados %}
             <div id="loja">
-                <img src="../{{loja.logotipo.url}}" alt=""></img>
+                <img src="../{{loja.logotipo.url}}" alt="Logotipo de pet shop."></img>
                 <p class="lojaNome">{{loja.nome_loja}}</p>
                 <div class="servicos">
                     {% if loja.banho %}
@@ -65,7 +65,7 @@
         <div class=displayLojas>
             {% for loja in jdPaulista %}
             <div id="loja">
-                <img src="../{{loja.logotipo.url}}" alt=""></img>
+                <img src="../{{loja.logotipo.url}}" alt="Logotipo de pet shop."></img>
                 <p class="lojaNome">{{loja.nome_loja}}</p>
                 <div class="servicos">
                     {% if loja.banho %}
@@ -97,7 +97,7 @@
         <div class=displayLojas>
             {% for loja in consolacao %}
             <div id="loja">
-                <img src="../{{loja.logotipo.url}}" alt=""></img>
+                <img src="../{{loja.logotipo.url}}" alt="Logotipo de pet shop."></img>
                 <p class="lojaNome">{{loja.nome_loja}}</p>
                 <div class="servicos">
                     {% if loja.banho %}

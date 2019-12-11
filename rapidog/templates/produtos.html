@@ -6,13 +6,13 @@
     <div class="tabelaProdutos">
         <div class=divBanners>
             <div>
-                <img src="{% static 'imagens/banner1.png' %}" alt="">
+                <a href="/produtos/brinquedos"><img src="{% static 'imagens/banner1.png' %}" alt="Imagem promocional."></a>
             </div>
             <div>
-                <img src="{% static 'imagens/banner2.png' %}" alt="">
+                <a href="/produtos/alimentacao/?q=petisco"><img src="{% static 'imagens/banner2.png' %}" alt="Imagem promocional."></a>
             </div>
             <div>
-                <img src="{% static 'imagens/banner3.png' %}" alt="">
+                <a href="/produtos/higiene"></a><img src="{% static 'imagens/banner3.png' %}" alt="Imagem promocional.">
             </div>
         </div>
         <div class="divCategoria">
@@ -23,7 +23,7 @@
             {% for produto in alimentacao %}
             <a href="{% url 'detalhe_produto' produto.slug %}">    
                 <div id="produto">
-                    <img src="../{{produto.imagem.url}}" alt="">
+                    <img src="../{{produto.imagem.url}}" alt="Imagem de produto.">
                     <p class="produtoDescricao">{{produto.nome_produto}}</p>
                     <p class="produtoMarca">{{produto.marca}}</p>
                     <p class="produtoPreco">R$ {{produto.preco}}</p>
@@ -39,7 +39,7 @@
             {% for produto in higiene %}
             <a href="{% url 'detalhe_produto' produto.slug %}">    
                 <div id="produto">
-                    <img src="../{{produto.imagem.url}}" alt="">
+                    <img src="../{{produto.imagem.url}}" alt="Imagem de produto.">
                     <p class="produtoDescricao">{{produto.nome_produto}}</p>
                     <p class="produtoMarca">{{produto.marca}}</p>
                     <p class="produtoPreco">R$ {{produto.preco}}</p>
@@ -48,14 +48,14 @@
             {% endfor %}
         </div>
         <div class="divCategoria">
-            <h1>Brinquedos & Bem Estar</h1>
+            <h1>Brinquedos & Acessórios</h1>
             <a href="brinquedos/" class="ancoraCategoria">Ver mais produtos</a>
         </div>
         <div class=displayProdutos>
             {% for produto in brinquedos %}
             <a href="{% url 'detalhe_produto' produto.slug %}">    
                 <div id="produto">
-                    <img src="../{{produto.imagem.url}}" alt="">
+                    <img src="../{{produto.imagem.url}}" alt="Imagem de produto.">
                     <p class="produtoDescricao">{{produto.nome_produto}}</p>
                     <p class="produtoMarca">{{produto.marca}}</p>
                     <p class="produtoPreco">R$ {{produto.preco}}</p>
