@@ -33,7 +33,7 @@
             </div>
             <a href="">Contato</a>
             {% if user.is_authenticated %}
-            <a href="">Olá, {{ user.username }}</a>
+            <a href="/perfil">Olá, {{ user.username }}</a>
             <a href="/accounts/logout">Sair</a>
             {% else %}
             <a href="/accounts/login">Login</a>
@@ -68,8 +68,5 @@
             <div class="footer-conteudo-redes"></div>
         </div>
     </footer>
-    <div class="footer-desenv">
-        <p>Desenvolvido por Denis e Leandra. 2019.</p>
-    </div>
 </body>
 </html>
