@@ -554,25 +554,41 @@ p {
     color: #0E1122;
 }
 
+/* Cadastro */
+
 .rowregister{
     width: 50em;
-    height: 40em;
+    height: 35em;
     padding: 1em;
 }
+
+/* Contato */
 
 .contato {
-    width: 50%;
-    margin-left: 10%;
-    padding-top: 10em;
-    padding: 10em;
+    width: 100%;
+    margin-left: 20%;
+    padding: 5%;
 }
 
-/* .contato div {
-    width: 50em;
-    height: 37em;
-    padding: 1em;
-} */
+.form-control {
+    width: 60%;
+    height: 5%;
+    padding-top: 0%;
+    padding: 0%;
+    background-color: rgb(246, 251, 252);
+}
 
+.btn-primary {
+    background-color: #01B5B2;
+    border-color: #01B5B2;
+    width: 28%;
+    height: 5%;
+    padding: 0%;
+}
+
+.label {
+    font-family: Proxima Nova Xbold;
+}
 /* =========== FONTS =========== */
 
 @font-face {
