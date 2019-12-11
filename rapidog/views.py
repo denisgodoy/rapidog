@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from rapidog.models import *
-from rapidog.forms import NewsletterForm
+from rapidog.forms import *
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -112,23 +113,6 @@ def lojas(request):
 
     return render(request, 'petshops.html', context)
 
-def busca(request):
-    query = request.GET.get('q','')
-
-    if query:
-        queryset = (Q(nome_produto__icontains=query)) | (Q(marca__icontains=query))
-        resultados = Produto.objects.filter(queryset).order_by('-id')
-            
-    else:
-        resultados = []
-
-    context = {
-        'query': query,
-        'resultados': resultados,
-    }
-
-    return render(request, 'busca.html', context)
-
 def detalhe_produto(request,slug):
     produto = Produto.objects.get(slug = slug)
     similares = Produto.objects.exclude(slug = slug).order_by('?')[:2]
@@ -141,3 +125,22 @@ def detalhe_produto(request,slug):
     return render(request, 'produto.html', context)
 
 # add @login_required em todas as views de usuario
+
+@login_required
+def perfil(request):
+    form = UsuarioForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+
+        context = {
+            'msg': 'Perfil atualizado com sucesso!'
+        }
+
+        return render(request, 'perfil.html', context)
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'perfil.html', context)
