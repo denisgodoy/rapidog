@@ -3,21 +3,26 @@
 {% load widget_tweaks %}
 
 {% block content %}
-<main id="produtos">
-    <div class="tabelaProdutos">
-        <div>
-            {% if user.is_authenticated %}
-            <p>Olá {{user.username}}</p>
+<section class="secao-login">
+    <div class="secao-login-div">
+            {% if form %}
+            <h2>Olá, {{user.get_username}}</h2>
             <form method="POST">
-            {% csrf_token %}
-            {% with WIDGET_REQUIRED_CLASS='formEmail' %}
-            {% render_field usuario.cidade %}
-            {% render_field usuario.nascimento %}
-            {% endwith %}
-            <button class="formBotao" type="submit">Enviar</button>
+                {% csrf_token %}
+                {% with WIDGET_REQUIRED_CLASS='login-form' %}
+                <p>Nome<br>
+                {% render_field form.nome %}</p>
+                <p>Sobrenome<br>
+                {% render_field form.sobrenome %}</p>
+                <p>Email<br>
+                {% render_field form.email %}</p>
+                {% endwith %}
+                <button class="login-form-botao" type="submit">Enviar</button>
             </form>
-            {% endif %}
-        </div>
-    </div>  
-</main>
+        {% endif %}
+        {% if msg %}
+        <h2>{{msg}}</h2>
+        {% endif %}
+    </div>
+</section>
 {% endblock %}     
