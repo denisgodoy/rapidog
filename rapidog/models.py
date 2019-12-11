@@ -1,5 +1,8 @@
 from django.db import models
 from autoslug import AutoSlugField
+from django.contrib.auth.models import User
+from django.db.models.signals import post_save
+from django.dispatch import receiver
 
 # Create your models here.
 
@@ -64,6 +67,15 @@ class Loja(models.Model):
 
 class Newsletter(models.Model):
     email = models.EmailField(max_length=140)
+
+    def __str__(self):
+        return self.email
+
+class Usuario(models.Model):
+    username = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    nome = models.CharField(max_length=30)
+    sobrenome = models.CharField(max_length=30)
+    email = models.EmailField(unique=True)
 
     def __str__(self):
         return self.email
