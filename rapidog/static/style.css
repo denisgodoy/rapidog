@@ -128,6 +128,14 @@ body {
     outline: none;
 }
 
+.btn-primary {
+    background-color: #01B5B2;
+    border-color: #01B5B2;
+    width: 28%;
+    height: 5%;
+    padding: 0%;
+}
+
 .card-title {
     color: #01B5B2;
     font-family: Proxima Nova Xbold;
@@ -149,6 +157,12 @@ body {
 
 .container-fluid .row {
     margin: 0;
+}
+
+.contato {
+    width: 100%;
+    margin-left: 20%;
+    padding: 5%;
 }
 
 .conteudo-botao {
@@ -403,6 +417,14 @@ body {
     width: 100%;
 }
 
+.form-control {
+    width: 100%;
+    height: 5%;
+    padding-top: 0%;
+    padding: 0%;
+    background-color: rgb(246, 251, 252);
+}
+
 h1 {
     color: white;
     font-family: Proxima Nova Blk;
@@ -436,6 +458,10 @@ h1 {
 .indisponivel {
     font-family: Proxima Nova Blk;
     color: rgb(236, 74, 74);
+}
+
+.label {
+    font-family: Proxima Nova Xbold;
 }
 
 .layout-footer {
@@ -1125,34 +1151,4 @@ p {
     .download-imagem-google {
         width: 47%; 
     }
-}
-
-
-
-/* Contato */
-
-.contato {
-    width: 100%;
-    margin-left: 20%;
-    padding: 5%;
-}
-
-.form-control {
-    width: 60%;
-    height: 5%;
-    padding-top: 0%;
-    padding: 0%;
-    background-color: rgb(246, 251, 252);
-}
-
-.btn-primary {
-    background-color: #01B5B2;
-    border-color: #01B5B2;
-    width: 28%;
-    height: 5%;
-    padding: 0%;
-}
-
-.label {
-    font-family: Proxima Nova Xbold;
 }
