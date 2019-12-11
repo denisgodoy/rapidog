@@ -1052,7 +1052,7 @@ p {
 
     #buscaProdutos {
         width: 80%;
-        font-size: 18pt;
+        font-size: 14pt;
     }
 
     .displayLojas {
@@ -1070,6 +1070,11 @@ p {
 
     .divBanners {
         display: none;
+    }
+
+    .divBusca {
+        flex-direction: column;
+        justify-content: center;
     }
 
     .divCategoria {
@@ -1092,6 +1097,11 @@ p {
         margin-top: 30px;
     }
 
+    .refresh {
+        margin-bottom: 20px;
+        margin-top: 0;
+    }
+
     .similares {
         flex-flow: row wrap;
         border-left: none;
@@ -1110,6 +1120,10 @@ p {
     .tabelaDetalhes {
         flex-flow: column;
         height: auto;
+    }
+
+    .textoResultado {
+        font-size: 18pt;
     }
 }
 
