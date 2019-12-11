@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
+{% load static %}
 
 {% block content %}
 <main id="produtos">
     <div class="tabelaDetalhes">
         <div class="produtoImagem">
-                <img src="../../{{produto.imagem.url}}" alt="Imagem promocional.">
+                <img src="{% static '/imagens/produtos/' %}{{produto.codigo_produto}}.png" alt="Imagem promocional.">
         </div>
         <div class="produtoAtributos">
             <p class="atributoNome">{{produto.nome_produto}}</p>
@@ -25,7 +26,7 @@
             {% for produto in similares %}
             <a href="{% url 'detalhe_produto' produto.slug %}">    
                 <div id="produtoSimilar">
-                    <img src="../../{{produto.imagem.url}}" alt="Imagem de produto.">
+                    <img src="{% static '/imagens/produtos/' %}{{produto.codigo_produto}}.png" alt="Imagem de produto.">
                     <p class="produtoDescricao">{{produto.nome_produto}}</p>
                     <p class="produtoMarca">{{produto.marca}}</p>
                 </div>

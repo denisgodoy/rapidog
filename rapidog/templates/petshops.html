@@ -8,16 +8,18 @@
                 <input type="search" name="q" id="buscaProdutos" placeholder="Busque por bairro ou nome"></input>
                 <button class="botaoBusca" type="submit"></button>
             </form>
-        {% if anuncios %}
         <p class="pAnuncio">Anúncios</p>
         <div class=divBanners>
-            {% for anuncio in anuncios %}
             <div>
-                <img src="../{{anuncio.anuncio.url}}" alt="Imagem promocional.">
+                <a href=""><img src="{% static 'imagens/petshops/banner-1.jpg' %}" alt="Imagem promocional."></a>
             </div>
-            {% endfor %}
+            <div>
+                <a href=""><img src="{% static 'imagens/petshops/banner-2.jpg' %}" alt="Imagem promocional."></a>
+            </div>
+            <div>
+                <a href=""></a><img src="{% static 'imagens/petshops/banner-3.jpg' %}" alt="Imagem promocional.">
+            </div>
         </div>
-        {% endif %}
     {% if query %}
         {% if resultados %}
         <div class="divBusca">
@@ -27,7 +29,7 @@
         <div class=displayLojas>
             {% for loja in resultados %}
             <div id="loja">
-                <img src="../{{loja.logotipo.url}}" alt="Logotipo de pet shop."></img>
+                <img src="{% static '/imagens/petshops/' %}{{loja.codigo_loja}}.jpeg" alt="Logotipo de pet shop."></img>
                 <p class="lojaNome">{{loja.nome_loja}}</p>
                 <div class="servicos">
                     {% if loja.banho %}
@@ -65,7 +67,7 @@
         <div class=displayLojas>
             {% for loja in jdPaulista %}
             <div id="loja">
-                <img src="../{{loja.logotipo.url}}" alt="Logotipo de pet shop."></img>
+                <img src="{% static '/imagens/petshops/' %}{{loja.codigo_loja}}.jpeg" alt="Logotipo de pet shop."></img>
                 <p class="lojaNome">{{loja.nome_loja}}</p>
                 <div class="servicos">
                     {% if loja.banho %}
@@ -97,7 +99,7 @@
         <div class=displayLojas>
             {% for loja in consolacao %}
             <div id="loja">
-                <img src="../{{loja.logotipo.url}}" alt="Logotipo de pet shop."></img>
+                <img src="{% static '/imagens/petshops/' %}{{loja.codigo_loja}}.jpeg" alt="Logotipo de pet shop."></img>
                 <p class="lojaNome">{{loja.nome_loja}}</p>
                 <div class="servicos">
                     {% if loja.banho %}
