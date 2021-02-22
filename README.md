@@ -7,4 +7,4 @@
 
 <p>Usability video:</p>
 
-[![RAPIDOG#2](https://im2.ezgif.com/tmp/ezgif-2-9f460d0e4da5.gif)](https://www.youtube.com/watch?v=UKuz1IJIx2M)
+[![RAPIDOG#2](https://user-images.githubusercontent.com/56933400/108771449-6f40c200-753a-11eb-8333-c97496c39047.gif)](https://www.youtube.com/watch?v=UKuz1IJIx2M)
