@@ -11,10 +11,15 @@
 ![RAPIDOG#1](https://user-images.githubusercontent.com/56933400/108790199-e0906d00-755a-11eb-91e1-3da5bb1c2ecf.jpg)
 
 ## Creating Models
-Migrating Classes to the server-side and populating information for Users, Products and Stores.
+Importing Djangos' models.
 
 ```python
+from django.db import models
+```
 
+Creating Classes/Models to the server-side and populating information.
+
+```python
 class Usuario(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     nome = models.CharField(max_length=30)
@@ -30,7 +35,7 @@ class Usuario(models.Model):
 * A base HTML layout should be ```header```, ```body``` and ```footer```. 
 * The block content inside the base layout ```body``` is where all other pages should be rendered.
 
-```html
+```
 {% block content %}
 
 {% endblock %}
@@ -38,7 +43,7 @@ class Usuario(models.Model):
 
 All other pages that'll render within ```layout.html``` requires an extension from the base layout.
  
-```html
+```
 {% extends 'layout.html' %}
 ```
 
