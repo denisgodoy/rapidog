@@ -3,15 +3,17 @@
 # rapidog :dog:
 #### Python project with Django model-template-view framework.
 
-- [Creating models](https://github.com/denisgodoy/rapidog#creating-models)
+- [Creating Models](https://github.com/denisgodoy/rapidog#creating-models)
+- [Constructing Templates](https://github.com/denisgodoy/rapidog#constructing-templates)
+- [Rendering Views](https://github.com/denisgodoy/rapidog#rendering-views)
 - [Generating query results](https://github.com/denisgodoy/rapidog#generating-query-results)
 
 ![RAPIDOG#1](https://user-images.githubusercontent.com/56933400/108790199-e0906d00-755a-11eb-91e1-3da5bb1c2ecf.jpg)
 
-## Creating models
-Migrating Classes' tables to the server-side and populating information for Users, Products and Stores on the ecommerce.
+## Creating Models
+Migrating Classes to the server-side and populating information for Users, Products and Stores.
 
-```ruby
+```python
 
 class Usuario(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
@@ -23,18 +25,70 @@ class Usuario(models.Model):
         return self.email
 ```
 
+## Constructing Templates
+* Template tags are mandatory on Django. The base ```layout.html``` requires  ```{% load static %}``` to load assets.
+* A base HTML layout should be ```header```, ```body``` and ```footer```. 
+* The block content inside the base layout ```body``` is where all other pages should be rendered.
+
+```html
+{% block content %}
+
+{% endblock %}
+```
+
+All other pages that'll render within ```layout.html``` requires an extension from the base layout.
+ 
+```html
+{% extends 'layout.html' %}
+```
+
+## Rendering Views
+Importing Django dependencies and models to be displayed.
+
+ ```python
+from django.shortcuts import render
+from rapidog.models import *
+```
+
+Rendering 5 products by category on the main products page, if marked as available.
+
+```python
+def produtos(request):
+    alimentacao = Produto.objects.filter(disponivel=True, categoria='alimentacao').order_by('-id')[:5]
+    higiene = Produto.objects.filter(disponivel=True, categoria='higiene').order_by('-id')[:5]
+    brinquedos = Produto.objects.filter(disponivel=True, categoria='brinquedos').order_by('-id')[:5]
+```
+
+Context is necessary to access objects' properties on template.
+
+```python
+    context = {
+        'alimentacao': alimentacao,
+        'higiene': higiene,
+        'brinquedos': brinquedos
+    }
+
+    return render(request, 'produtos.html', context)
+```
+
 ## Generating query results
 
-Method to receive user's input and validate within the category, showing only current available products.
+Importing Django's native Q application to ```views.py```.
 
-```ruby
+```python
+from django.db.models import Q
+```
+
+Method to get user's input and validate within the category, showing only current available products.
+
+```python
 def alimentacao(request):
     query = request.GET.get('q','')
     alimentacao = Produto.objects.filter(disponivel=True, categoria='alimentacao').order_by('-id')
 ```
 If there's a query, the user can search by either name or brand, filtering products.
 
-```ruby
+```python
     if query:
             queryset = (Q(nome_produto__icontains=query)) | (Q(marca__icontains=query))
             resultados = Produto.objects.filter(queryset, categoria='alimentacao').order_by('-id')
@@ -44,8 +98,7 @@ If there's a query, the user can search by either name or brand, filtering produ
 
 Rendering products that match the queryset.
 
-```ruby
-
+```python
     context = {
         'query': query,
         'resultados': resultados,
