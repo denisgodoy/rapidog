@@ -7,11 +7,13 @@
 - [Constructing Templates](https://github.com/denisgodoy/rapidog#constructing-templates)
 - [Rendering Views](https://github.com/denisgodoy/rapidog#rendering-views)
 - [Generating query results](https://github.com/denisgodoy/rapidog#generating-query-results)
+- [URL configuration](https://github.com/denisgodoy/rapidog#url-configuration)
+
 
 ![RAPIDOG#1](https://user-images.githubusercontent.com/56933400/108790199-e0906d00-755a-11eb-91e1-3da5bb1c2ecf.jpg)
 
 ## Creating Models
-Importing Djangos' models.
+Importing Django's Models.
 
 ```python
 from django.db import models
@@ -48,7 +50,7 @@ All other pages that'll render within ```layout.html``` requires an extension fr
 ```
 
 ## Rendering Views
-Importing Django dependencies and models to be displayed.
+Importing Django's dependencies and Models to be displayed.
 
  ```python
 from django.shortcuts import render
@@ -91,7 +93,8 @@ def alimentacao(request):
     query = request.GET.get('q','')
     alimentacao = Produto.objects.filter(disponivel=True, categoria='alimentacao').order_by('-id')
 ```
-If there's a query, the user can search by either name or brand, filtering products.
+
+If there's a query - the user can search by either name or brand - filter products.
 
 ```python
     if query:
@@ -114,3 +117,35 @@ Rendering products that match the queryset.
 ```
 
 ![RAPIDOG#2](https://user-images.githubusercontent.com/56933400/108771449-6f40c200-753a-11eb-8333-c97496c39047.gif)
+
+
+## URL configuration
+Importing all necessary Views and Django's applications to ```config_rapidog/urls.py```.
+
+```python
+from django.contrib import admin
+from django.urls import path, include
+from rapidog import views
+from django.conf import settings
+from django.conf.urls.static import static
+```
+
+Creating routes accessing all Views' methods.
+
+```python
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', views.index),
+    path('produtos/', views.produtos),
+    path('produtos/alimentacao/', views.alimentacao),
+    path('produtos/higiene/', views.higiene),
+    path('produtos/brinquedos/', views.brinquedos),
+    path('petshops/', views.lojas),
+    path('produtos/<slug:slug>/', views.detalhe_produto, name='detalhe_produto'),
+    path('accounts/', include('accounts.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/login/', include('django.contrib.auth.urls')),
+    path('perfil/', views.perfil),
+    path('contato/', views.contato),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+```
